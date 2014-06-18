@@ -18,5 +18,13 @@
     "iit"
   ],
   "author": "Tom Vincent <npm@tlvince.com> (http://tlvince.com/)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tlvince/eslint-no-exclusive-tests.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tlvince/eslint-no-exclusive-tests/issues"
+  },
+  "homepage": "https://github.com/tlvince/eslint-no-exclusive-tests"
 }
