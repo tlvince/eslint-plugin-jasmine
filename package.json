@@ -1,0 +1,22 @@
+{
+  "name": "eslint-no-exclusive-tests",
+  "version": "0.1.0",
+  "description": "ESLint rule to disallow use of exclusive tests",
+  "main": "lib/rules/no-exclusive-tests.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eslint",
+    "rule",
+    "jasmine",
+    "ddescribe",
+    "iit"
+  ],
+  "author": "Tom Vincent <npm@tlvince.com> (http://tlvince.com/)",
+  "license": "MIT"
+}
