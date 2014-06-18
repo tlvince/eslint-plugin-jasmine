@@ -12,6 +12,7 @@
   },
   "keywords": [
     "eslint",
+    "eslint-plugin",
     "rule",
     "jasmine",
     "ddescribe",
