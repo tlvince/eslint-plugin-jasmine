@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-no-exclusive-tests",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ESLint rule to disallow use of exclusive tests",
   "main": "lib/rules/no-exclusive-tests.js",
   "peerDependencies": {
