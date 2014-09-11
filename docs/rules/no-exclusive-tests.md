@@ -6,7 +6,7 @@ unexpected behaviour if accidently committed.
 
 ## Rule Details
 
-This rule aims to warn whenever it encouters `ddescibe`, `iit`, `xdescribe`
+This rule aims to warn whenever it encouters `ddescribe`, `iit`, `xdescribe`
 and `xit`.
 
 The following patterns are considered warnings:
