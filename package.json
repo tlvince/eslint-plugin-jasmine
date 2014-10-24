@@ -16,6 +16,7 @@
   "keywords": [
     "eslint",
     "eslint-plugin",
+    "eslintplugin",
     "rule",
     "jasmine",
     "ddescribe",
