@@ -1,5 +1,10 @@
 # eslint-plugin-jasmine
 
+[![Build Status][travis-image]][travis-url]
+
+[travis-url]: https://travis-ci.org/tlvince/eslint-plugin-jasmine
+[travis-image]: https://img.shields.io/travis/tlvince/eslint-plugin-jasmine.svg
+
 > ESLint rules for Jasmine
 
 ## Usage
