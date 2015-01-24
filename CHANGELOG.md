@@ -21,7 +21,7 @@ the [Keep a CHANGELOG](http://keepachangelog.com) format.
 
 - Support for ESLint v0.8's plugin API
 
-## [0.1.0] - 2014-06-18
+## 0.1.0 - 2014-06-18
 
 ### Added
 
