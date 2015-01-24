@@ -1,13 +1,17 @@
 # Disallow use of exclusive tests (no-exclusive-tests)
 
-Jasmine uses `ddescribe` to only run a specific test suite and `iit` to only
-run a specific spec. Whilst handy during development, these can cause
-unexpected behaviour if accidently committed.
+Jasmine uses `ddescribe` to run a specific test suite and `iit` to run
+a specific spec exclusively ("[focused specs](focused)"; `fdescribe` and `fit`
+as of Jasmine v2.1).
+
+Whilst handy during development, these can cause unexpected behaviour if
+accidentally committed to source control.
+
+[focused]: http://jasmine.github.io/2.1/focused_specs.html
 
 ## Rule Details
 
-This rule aims to warn whenever it encouters `ddescribe`, `iit`, `xdescribe`
-and `xit`.
+This rule aims to warn whenever it encounters `ddescribe`, `iit`, `fdescribe` and `fit`.
 
 The following patterns are considered warnings:
 
@@ -15,7 +19,7 @@ The following patterns are considered warnings:
 ddescribe('My exclusive suite', function() {});
 
 describe('My suite', function() {
-    iit('My exclusive spect', function() {});
+  iit('My exclusive spec', function() {});
 });
 
 ```
@@ -25,7 +29,7 @@ The following patterns are not warnings:
 ```js
 describe('My suite', function() {});
 describe('My suite', function() {
-    it('My spec', function() {});
+  it('My spec', function() {});
 });
 
 ```

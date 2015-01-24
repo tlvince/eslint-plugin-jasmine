@@ -26,16 +26,16 @@ eslintTester.addRuleTest('lib/rules/no-exclusive-tests', {
       }]
     },
     {
-      code: 'xdescribe("My disabled suite", function() {});',
+      code: 'fdescribe("My focused suite", function() {});',
       errors: [{
-        message: 'Unexpected xdescribe.',
+        message: 'Unexpected fdescribe.',
         type: 'Identifier'
       }]
     },
     {
-      code: 'xit("My disabled spec", function() {});',
+      code: 'fit("My focused spec", function() {});',
       errors: [{
-        message: 'Unexpected xit.',
+        message: 'Unexpected fit.',
         type: 'Identifier'
       }]
     }
