@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-jasmine",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0",
   "description": "ESLint rules for Jasmine",
   "main": "index.js",
   "peerDependencies": {
