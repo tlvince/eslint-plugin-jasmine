@@ -18,10 +18,7 @@
     "eslint",
     "eslint-plugin",
     "eslintplugin",
-    "rule",
-    "jasmine",
-    "ddescribe",
-    "iit"
+    "jasmine"
   ],
   "author": "Tom Vincent <npm@tlvince.com> (http://tlvince.com/)",
   "license": "MIT",
