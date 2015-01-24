@@ -2,9 +2,9 @@
 
 module.exports = {
   rules: {
-    'no-exclusive-tests': require('./lib/rules/no-exclusive-tests')
+    'no-focused-specs': require('./lib/rules/no-focused-specs')
   },
   rulesConfig: {
-    'no-exclusive-tests': 2
+    'no-focused-specs': 2
   }
 };

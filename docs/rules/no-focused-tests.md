@@ -1,25 +1,28 @@
-# Disallow use of exclusive tests (no-exclusive-tests)
+# Disallow use of focused tests (no-focused-tests)
 
-Jasmine uses `ddescribe` to run a specific test suite and `iit` to run
-a specific spec exclusively ("[focused specs](focused)"; `fdescribe` and `fit`
-as of Jasmine v2.1).
+Jasmine uses `fdescribe` and `fit` ("[focused specs][]") to run a suite/spec
+exclusively.
 
 Whilst handy during development, these can cause unexpected behaviour if
 accidentally committed to source control.
 
-[focused]: http://jasmine.github.io/2.1/focused_specs.html
+**Note**: `fdescribe` and `fit` are known as `ddescribe` and `iit` in previous
+Jasmine versions (<2.1). This rule checks for both syntaxes.
+
+[focused specs]: http://jasmine.github.io/2.1/focused_specs.html
 
 ## Rule Details
 
-This rule aims to warn whenever it encounters `ddescribe`, `iit`, `fdescribe` and `fit`.
+This rule aims to warn whenever it encounters `fdescribe`, `fit`, `ddescribe`
+and `iit`.
 
 The following patterns are considered warnings:
 
 ```js
-ddescribe('My exclusive suite', function() {});
+ddescribe('My focused suite', function() {});
 
 describe('My suite', function() {
-  iit('My exclusive spec', function() {});
+  iit('My focused spec', function() {});
 });
 
 ```
@@ -37,7 +40,7 @@ describe('My suite', function() {
 ## When Not To Use It
 
 If you're not using a test runner (Jasmine, or a runner with Jasmine-like
-syntax) or otherwise have steps in place to prevent exclusive tests (e.g. a Git
+syntax) or otherwise have steps in place to prevent focused tests (e.g. a Git
 pre-commit hook).
 
 ## Further Reading

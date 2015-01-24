@@ -1,40 +1,49 @@
-# eslint-plugin-no-exclusive-tests
+# eslint-plugin-jasmine
 
-> ESLint rule to disallow use of exclusive tests
+> ESLint rules for Jasmine
 
 ## Usage
 
-1. Install `eslint-plugin-no-exclusive-tests` as a dev-dependency:
+1. Install `eslint-plugin-jasmine` as a dev-dependency:
 
     ```shell
-    npm install --save-dev eslint-plugin-no-exclusive-tests
+    npm install --save-dev eslint-plugin-jasmine
     ```
 
 2. Enable the plugin by adding it to your `.eslintrc`:
 
     ```yaml
     plugins:
-      - no-exclusive-tests
+      - jasmine
     ```
 
-The "no-exclusive-tests" rule is enabled by default and set to "2": "turn the
-rule on as an error (exit code is 1 when triggered)" (see [Configuring
-Rules][1]).
+## Configuration
 
-You may configure the rule by adding it in your `.eslintrc` `rules` property:
+This plugin ships with a default configuration for each rule:
+
+Rule                    | Default
+----                    | -------
+[no-focused-tests][]    | 2
+[no-disabled-tests][]   | 1
+
+For example, the `no-focused-tests` rule is enabled by default and will cause
+ESLint to throw an error (with an exit code of `1`) when triggered.
+
+You may customise each rule by adding a value in your `.eslintrc` `rules`
+property:
 
 ```yaml
 plugins:
-  - no-exclusive-tests
+  - jasmine
 rules:
-  no-exlusive-tests/no-exclusive-tests: 0
+  jasmine/no-focused-tests: 0
 ```
 
-[1]: http://eslint.org/docs/configuring/
+See [configuring rules][] for more information.
 
-## Rules
-
-* [no-exclusive-tests](docs/rules/no-exclusive-tests.md)
+[no-focused-tests]: docs/rules/no-focused-tests.md
+[no-disabled-tests]: docs/rules/no-disabled-tests.md
+[configuring rules]: http://eslint.org/docs/configuring/
 
 ## Author
 

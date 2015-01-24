@@ -4,7 +4,7 @@ var linter = require('eslint').linter;
 var ESLintTester = require('eslint-tester');
 
 var eslintTester = new ESLintTester(linter);
-eslintTester.addRuleTest('lib/rules/no-exclusive-tests', {
+eslintTester.addRuleTest('lib/rules/no-focused-tests', {
   valid: [
     'describe("", function() {})',
     'describe("", function() { it("", function() {} ) })'
