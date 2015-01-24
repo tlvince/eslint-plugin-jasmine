@@ -1,8 +1,8 @@
 {
   "name": "eslint-plugin-no-exclusive-tests",
-  "version": "0.2.0",
+  "version": "1.0.0-rc.1",
   "description": "ESLint rule to disallow use of exclusive tests",
-  "main": "lib/rules/no-exclusive-tests.js",
+  "main": "index.js",
   "peerDependencies": {
     "eslint": ">=0.8.0"
   },
@@ -11,7 +11,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha",
+    "watch": "mocha --watch"
   },
   "keywords": [
     "eslint",
@@ -26,10 +27,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tlvince/eslint-no-exclusive-tests.git"
+    "url": "https://github.com/tlvince/eslint-plugin-no-exclusive-tests.git"
   },
   "bugs": {
-    "url": "https://github.com/tlvince/eslint-no-exclusive-tests/issues"
+    "url": "https://github.com/tlvince/eslint-plugin-no-exclusive-tests/issues"
   },
-  "homepage": "https://github.com/tlvince/eslint-no-exclusive-tests"
+  "homepage": "https://github.com/tlvince/eslint-plugin-no-exclusive-tests",
+  "devDependencies": {
+    "eslint": "^0.12.0",
+    "eslint-tester": "^0.5.0",
+    "mocha": "^2.1.0"
+  }
 }

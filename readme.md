@@ -1,1 +1,0 @@
-docs/rules/no-exclusive-tests.md
