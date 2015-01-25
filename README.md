@@ -48,7 +48,7 @@ See [configuring rules][] for more information.
 
 [no-focused-tests]: docs/rules/no-focused-tests.md
 [no-disabled-tests]: docs/rules/no-disabled-tests.md
-[configuring rules]: http://eslint.org/docs/configuring/
+[configuring rules]: http://eslint.org/docs/configuring/#configuring-rules
 
 ## Author
 
