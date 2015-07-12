@@ -11,6 +11,7 @@
     "test": "tests"
   },
   "scripts": {
+    "pretest": "eslint index.js lib test",
     "test": "mocha",
     "watch": "mocha --watch"
   },
