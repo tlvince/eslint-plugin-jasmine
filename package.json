@@ -36,8 +36,8 @@
   "devDependencies": {
     "eslint": "^0.24.1",
     "eslint-config-tlvince": "^1.2.0",
-    "eslint-tester": "^0.5.0",
-    "mocha": "^2.1.0",
+    "eslint-tester": "^0.8.2",
+    "mocha": "^2.2.5",
     "semantic-release": "^3.3.2"
   }
 }
