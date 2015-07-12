@@ -4,6 +4,7 @@ var linter = require('eslint').linter;
 var ESLintTester = require('eslint-tester');
 
 var eslintTester = new ESLintTester(linter);
+
 eslintTester.addRuleTest('lib/rules/no-focused-tests', {
   valid: [
     'describe("", function() {})',
@@ -13,31 +14,39 @@ eslintTester.addRuleTest('lib/rules/no-focused-tests', {
   invalid: [
     {
       code: 'ddescribe("My exclusive suite", function() {});',
-      errors: [{
-        message: 'Unexpected ddescribe.',
-        type: 'Identifier'
-      }]
+      errors: [
+        {
+          message: 'Unexpected ddescribe.',
+          type: 'Identifier'
+        }
+      ]
     },
     {
       code: 'iit("My exclusive test", function() {});',
-      errors: [{
-        message: 'Unexpected iit.',
-        type: 'Identifier'
-      }]
+      errors: [
+        {
+          message: 'Unexpected iit.',
+          type: 'Identifier'
+        }
+      ]
     },
     {
       code: 'fdescribe("My focused suite", function() {});',
-      errors: [{
-        message: 'Unexpected fdescribe.',
-        type: 'Identifier'
-      }]
+      errors: [
+        {
+          message: 'Unexpected fdescribe.',
+          type: 'Identifier'
+        }
+      ]
     },
     {
       code: 'fit("My focused spec", function() {});',
-      errors: [{
-        message: 'Unexpected fit.',
-        type: 'Identifier'
-      }]
+      errors: [
+        {
+          message: 'Unexpected fit.',
+          type: 'Identifier'
+        }
+      ]
     }
   ]
 });
