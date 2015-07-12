@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-jasmine",
-  "version": "1.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "ESLint rules for Jasmine",
   "main": "index.js",
   "peerDependencies": {
@@ -13,7 +13,9 @@
   "scripts": {
     "pretest": "eslint index.js lib test",
     "test": "mocha",
-    "watch": "mocha --watch"
+    "watch": "mocha --watch",
+    "prepublish": "semantic-release pre",
+    "postpublish": "semantic-release post"
   },
   "keywords": [
     "eslint",
@@ -35,6 +37,7 @@
     "eslint": "^0.24.1",
     "eslint-config-tlvince": "^1.2.0",
     "eslint-tester": "^0.5.0",
-    "mocha": "^2.1.0"
+    "mocha": "^2.1.0",
+    "semantic-release": "^3.3.2"
   }
 }
