@@ -50,7 +50,7 @@ See [configuring rules][] for more information.
 [no-focused-tests]: docs/rules/no-focused-tests.md
 [no-disabled-tests]: docs/rules/no-disabled-tests.md
 [no-suite-dupes]: docs/rules/no-suite-dupes.md
-[configuring rules]: http://eslint.org/docs/configuring/#configuring-rules
+[configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
 ## Author
 
