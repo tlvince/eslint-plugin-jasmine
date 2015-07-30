@@ -26,11 +26,11 @@
 
 This plugin ships with a default configuration for each rule:
 
-Rule                    | Default
-----                    | -------
-[no-focused-tests][]    | 2
-[no-disabled-tests][]   | 1
-[no-suite-dupes][]      | 1
+Rule                    | Default    | Options
+----                    | -------    | -------
+[no-focused-tests][]    | 2          |
+[no-disabled-tests][]   | 1          |
+[no-suite-dupes][]      | 1, 'block' | ['block', 'branch']
 
 For example, the `no-focused-tests` rule is enabled by default and will cause
 ESLint to throw an error (with an exit code of `1`) when triggered.
@@ -43,6 +43,9 @@ plugins:
   - jasmine
 rules:
   jasmine/no-focused-tests: 0
+  jasmine/no-suite-dupes:
+    - 2
+    - "branch"
 ```
 
 See [configuring rules][] for more information.
