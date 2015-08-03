@@ -21,10 +21,10 @@ describe("Same suite name", function() {});
 
 ```js
 describe("Unique parent", function(){
-  // ...
+  describe("Same suite name", function() {});
 });
 describe("Different parent", function(){
-  // ...
+  describe("Same suite name", function() {});
 });
 ```
 
