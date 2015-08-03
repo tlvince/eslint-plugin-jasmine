@@ -17,12 +17,12 @@ function toCode(lines, description) {
   return (description ? '// ' + description : '') + '\n' + lines.join('\n');
 }
 
-eslintTester.addRuleTest('lib/rules/no-suite-dupes', {
+eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
   valid: [
     // default
     toCode([
-      'describe("The first suite name", function() {}); ',
-      'describe("The second suite name", function() {})'
+      'it("The first spec name", function() {}); ',
+      'it("The second spec name", function() {})'
     ]),
     toCode([
       'unrelated("The first spec name", function() {}); ',
@@ -33,16 +33,16 @@ eslintTester.addRuleTest('lib/rules/no-suite-dupes', {
       'justAFunction();'
     ], 'a regular function'),
     toCode([
-      'describe("Handling" + " string " + "concatenation", function() {}); ',
-      'describe("Handling" + " it good", function() {})'
+      'it("Handling" + " string " + "concatenation", function() {}); ',
+      'it("Handling" + " it good", function() {})'
     ], 'description is concatenated string'),
     {
       code: toCode([
-        'describe("Some context", function() {',
-        '  // it(...',
+        'describe("context", function() {',
+        '  it("different", function(){});',
         '});',
-        'describe("Different context", function() {',
-        '  // it(...',
+        'describe("context", function() {',
+        '  it("unique", function(){});',
         '});'
       ], 'same it in different context')
     },
@@ -54,8 +54,8 @@ eslintTester.addRuleTest('lib/rules/no-suite-dupes', {
         'block'
       ],
       code: toCode([
-        'describe("The first suite name", function() {}); ',
-        'describe("The second suite name", function() {})'
+        'it("The first spec name", function() {}); ',
+        'it("The second spec name", function() {})'
       ])
     },
 
@@ -66,8 +66,8 @@ eslintTester.addRuleTest('lib/rules/no-suite-dupes', {
         'branch'
       ],
       code: toCode([
-        'describe("The first suite name", function() {}); ',
-        'describe("The second suite name", function() {})'
+        'describe("The first spec name", function() {}); ',
+        'describe("The second spec name", function() {})'
       ])
     },
     {
@@ -77,10 +77,10 @@ eslintTester.addRuleTest('lib/rules/no-suite-dupes', {
       ],
       code: toCode([
         'describe("unique", function(){',
-        '  // it(...',
+        '  it("spec", function(){});',
         '});',
         'describe("different", function(){',
-        '  // it(...',
+        '  it("spec", function(){});',
         '});'
       ], 'same block in different parent blocks')
     },
@@ -92,10 +92,10 @@ eslintTester.addRuleTest('lib/rules/no-suite-dupes', {
       code: toCode([
         'describe("context", function(){',
         '  describe("unique", function(){',
-        '    // it(...',
+        '    it("spec", function(){});',
         '  });',
         '  describe("different", function(){',
-        '    // it(...',
+        '    it("spec", function(){});',
         '  });',
         '});'
       ], 'difference in middle-nest block')
@@ -108,34 +108,50 @@ eslintTester.addRuleTest('lib/rules/no-suite-dupes', {
       code: toCode([
         'describe("same", function(){',
         '  describe("same", function(){',
-        '    // it(...',
+        '    it("spec", function(){});',
         '  });',
         '});'
       ])
+    },
+    {
+      args: [
+        2,
+        'branch'
+      ],
+      code: toCode([
+        'describe("same", function(){',
+        '  describe("same", function(){',
+        '    it("different", function(){});',
+        '  });',
+        '  describe("same", function(){',
+        '    it("unique", function(){});',
+        '  });',
+        '});'
+      ], 'same branch until spec')
     }
   ],
   invalid: [
     {
       // default
       code: toCode([
-        'describe("Same suite name", function() {});',
-        'describe("Same suite name", function() {})'
+        'it("Same spec name", function() {});',
+        'it("Same spec name", function() {})'
       ]),
       errors: [
         {
-          message: 'Duplicate suite: "Same suite name"',
+          message: 'Duplicate spec: "Same spec name"',
           type: 'CallExpression'
         }
       ]
     },
     {
       code: toCode([
-        'describe("Handling" + " string " + "concatenation", function() {}); ',
-        'describe("Handling string concatenation", function() {})'
+        'it("Handling" + " string " + "concatenation", function() {}); ',
+        'it("Handling string concatenation", function() {})'
       ], 'description is concatenated string'),
       errors: [
         {
-          message: 'Duplicate suite: "Handling string concatenation"',
+          message: 'Duplicate spec: "Handling string concatenation"',
           type: 'CallExpression'
         }
       ]
@@ -148,12 +164,12 @@ eslintTester.addRuleTest('lib/rules/no-suite-dupes', {
         'block'
       ],
       code: toCode([
-        'describe("Same suite name", function() {}); ',
-        'describe("Same suite name", function() {})'
+        'it("Same spec name", function() {}); ',
+        'it("Same spec name", function() {})'
       ]),
       errors: [
         {
-          message: 'Duplicate suite: "Same suite name"',
+          message: 'Duplicate spec: "Same spec name"',
           type: 'CallExpression'
         }
       ]
@@ -165,16 +181,17 @@ eslintTester.addRuleTest('lib/rules/no-suite-dupes', {
       ],
       code: toCode([
         'describe("Parent context", function(){',
-        '  describe("Same block", function(){',
-        '    describe("Same block", function(){',
-        '      // it(...',
-        '    });',
+        '  describe("Same parent", function(){',
+        '    it("Same spec", function(){});',
+        '  });',
+        '  describe("Same parent", function(){',
+        '    it("Same spec", function(){});',
         '  });',
         '});'
-      ], 'same block withing the same branch'),
+      ], 'same specs withing the same branch'),
       errors: [
         {
-          message: 'Duplicate suite: "Same block"',
+          message: 'Duplicate spec: "Same spec"',
           type: 'CallExpression'
         }
       ]
@@ -187,12 +204,12 @@ eslintTester.addRuleTest('lib/rules/no-suite-dupes', {
         'branch'
       ],
       code: toCode([
-        'describe("Same suite name", function() {}); ',
-        'describe("Same suite name", function() {})'
-      ], 'same blocks'),
+        'it("Spec name", function() {}); ',
+        'it("Spec name", function() {})'
+      ], 'same specs at root'),
       errors: [
         {
-          message: 'Duplicate suite: "Same suite name"',
+          message: 'Duplicate spec: "Spec name"',
           type: 'CallExpression'
         }
       ]
@@ -205,38 +222,16 @@ eslintTester.addRuleTest('lib/rules/no-suite-dupes', {
       code: toCode([
         'describe("parent context", function(){',
         '  describe("same", function(){',
-        '    // it(...',
+        '    it("spec", function(){});',
         '  });',
         '  describe("same", function(){',
-        '    // it(...',
+        '    it("spec", function(){});',
         '  });',
         '});'
-      ], 'same block in different contexts'),
+      ], 'same spec in different contexts'),
       errors: [
         {
-          message: 'Duplicate suite: "parent context same"',
-          type: 'CallExpression'
-        }
-      ]
-    },
-    {
-      args: [
-        2,
-        'branch'
-      ],
-      code: toCode([
-        'describe("parent context", function(){',
-        '  describe("same", function(){',
-        '    // it(...',
-        '  });',
-        '  describe("same", function(){',
-        '    // it(...',
-        '  });',
-        '});'
-      ], 'same block in the middle of branches'),
-      errors: [
-        {
-          message: 'Duplicate suite: "parent context same"',
+          message: 'Duplicate spec: "parent context same spec"',
           type: 'CallExpression'
         }
       ]
