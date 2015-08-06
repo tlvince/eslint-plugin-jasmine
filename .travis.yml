@@ -1,23 +1,15 @@
 sudo: false
 language: node_js
-node_js:
-- '0.10'
 cache:
   directories:
-  - node_modules
+    - node_modules
 notifications:
   email: false
-before_deploy:
-- npm config set spin false --global
-env:
-  global:
-    secure: Rhvs4l7wQ1YSpg620sG/Xr7x7hHHlSoouDsQElAUvD3ij2aYu0pA7PtTlj+ooAj+LFEJs7ziDBYneox19ISBvHnVeizSOlmvpW4JqOXgXBtbKeDq/XlJ9UxJDyVlbck3pYWq/DmD7E719xnxpLpIaUrb9x5RHtAjjjP8GBSNWtg=
-deploy:
-  provider: npm
-  email: npm@tlvince.com
-  skip_cleanup: true
-  api_key:
-    secure: bo9daf92fiSql5LytScc9XP3lZRrY9AXOkVsgdl+Boph4E39lK+vermI5nN3Tta5o4ZvAy3LFWW8KwUfYHnyagpf+KXL0JBAszplsTqHtNMQdcVIYMyhFCLpyrrZoSSFXGmOmidik733TCmlDwMVnRW0CvbELRVqFJ26++3AWGM=
-  on:
-    branch: master
-    repo: tlvince/eslint-plugin-jasmine
+node_js:
+  - '0.10'
+before_install:
+  - npm i -g npm@^2.0.0
+before_script:
+  - npm prune
+after_success:
+  - npm run semantic-release
