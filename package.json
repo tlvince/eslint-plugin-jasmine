@@ -2,9 +2,6 @@
   "name": "eslint-plugin-jasmine",
   "description": "ESLint rules for Jasmine",
   "main": "index.js",
-  "peerDependencies": {
-    "eslint": ">=0.8.0"
-  },
   "directories": {
     "doc": "docs",
     "test": "tests"
@@ -32,9 +29,8 @@
   },
   "homepage": "https://github.com/tlvince/eslint-plugin-jasmine",
   "devDependencies": {
-    "eslint": "^0.24.1",
+    "eslint": "^1.1.0",
     "eslint-config-tlvince": "^1.2.0",
-    "eslint-tester": "0.8.1",
     "mocha": "^2.2.5",
     "semantic-release": "^4.0.2"
   }

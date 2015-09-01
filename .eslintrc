@@ -1,3 +1,22 @@
 extends: tlvince
 env:
   node: true
+
+rules:
+  # These rules have been modified in the update of eslint@^1.0.0.
+  # The configuration is overridden, because the upstream ruleset hasn't been upgraded to this eslint version.
+  space-in-brackets: 0
+  object-curly-spacing:
+    - 2
+    - never
+  array-bracket-spacing:
+    - 2
+    - never
+  computed-property-spacing:
+    - 2
+    - never
+
+  indent:
+    - 2
+    - 2
+    - SwitchCase: 1

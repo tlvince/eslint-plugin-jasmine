@@ -1,9 +1,9 @@
 'use strict';
 
-var linter = require('eslint').linter;
-var ESLintTester = require('eslint-tester');
+var rule = require('../../lib/rules/no-spec-dupes');
+var RuleTester = require('eslint').RuleTester;
 
-var eslintTester = new ESLintTester(linter);
+var eslintTester = new RuleTester();
 
 /*
  * Generate readble code lines block
@@ -17,7 +17,7 @@ function toCode(lines, description) {
   return (description ? '// ' + description : '') + '\n' + lines.join('\n');
 }
 
-eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
+eslintTester.run('no-spec-dupes', rule, {
   valid: [
     // default
     toCode([
@@ -49,8 +49,7 @@ eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
 
     // 'block'
     {
-      args: [
-        2,
+      options: [
         'block'
       ],
       code: toCode([
@@ -61,8 +60,7 @@ eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
 
     // 'branch'
     {
-      args: [
-        2,
+      options: [
         'branch'
       ],
       code: toCode([
@@ -71,8 +69,7 @@ eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
       ])
     },
     {
-      args: [
-        2,
+      options: [
         'branch'
       ],
       code: toCode([
@@ -85,8 +82,7 @@ eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
       ], 'same block in different parent blocks')
     },
     {
-      args: [
-        2,
+      options: [
         'branch'
       ],
       code: toCode([
@@ -101,8 +97,7 @@ eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
       ], 'difference in middle-nest block')
     },
     {
-      args: [
-        2,
+      options: [
         'branch'
       ],
       code: toCode([
@@ -114,8 +109,7 @@ eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
       ])
     },
     {
-      args: [
-        2,
+      options: [
         'branch'
       ],
       code: toCode([
@@ -159,8 +153,7 @@ eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
 
     // 'block'
     {
-      args: [
-        2,
+      options: [
         'block'
       ],
       code: toCode([
@@ -175,8 +168,7 @@ eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
       ]
     },
     {
-      args: [
-        2,
+      options: [
         'block'
       ],
       code: toCode([
@@ -199,8 +191,7 @@ eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
 
     // 'branch'
     {
-      args: [
-        2,
+      options: [
         'branch'
       ],
       code: toCode([
@@ -215,8 +206,7 @@ eslintTester.addRuleTest('lib/rules/no-spec-dupes', {
       ]
     },
     {
-      args: [
-        2,
+      options: [
         'branch'
       ],
       code: toCode([
