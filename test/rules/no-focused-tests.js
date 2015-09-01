@@ -1,11 +1,11 @@
 'use strict';
 
-var linter = require('eslint').linter;
-var ESLintTester = require('eslint-tester');
+var rule = require('../../lib/rules/no-focused-tests');
+var RuleTester = require('eslint').RuleTester;
 
-var eslintTester = new ESLintTester(linter);
+var eslintTester = new RuleTester();
 
-eslintTester.addRuleTest('lib/rules/no-focused-tests', {
+eslintTester.run('no-focused-tests', rule, {
   valid: [
     'describe("", function() {})',
     'describe("", function() { it("", function() {} ) })'
