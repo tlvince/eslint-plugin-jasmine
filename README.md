@@ -26,13 +26,14 @@
 
 This plugin ships with a default configuration for each rule:
 
-Rule                    | Default       | Options
-----                    | -------       | -------
-[no-focused-tests][]    | 2             |
-[no-disabled-tests][]   | 1             |
-[no-spec-dupes][]       | 1, 'block'    | ['block', 'branch']
-[no-suite-dupes][]      | 1, 'block'    | ['block', 'branch']
-[missing-expect][]      | 0, 'expect()' | expectation function names
+Rule                         | Default       | Options
+----                         | -------       | -------
+[no-focused-tests][]         | 2             |
+[no-disabled-tests][]        | 1             |
+[no-spec-dupes][]            | 1, 'block'    | ['block', 'branch']
+[no-suite-dupes][]           | 1, 'block'    | ['block', 'branch']
+[no-suite-callback-args][]   | 2             |
+[missing-expect][]           | 0, 'expect()' | expectation function names
 
 For example, the `no-focused-tests` rule is enabled by default and will cause
 ESLint to throw an error (with an exit code of `1`) when triggered.
@@ -56,6 +57,7 @@ See [configuring rules][] for more information.
 [no-disabled-tests]: docs/rules/no-disabled-tests.md
 [no-spec-dupes]: docs/rules/no-spec-dupes.md
 [no-suite-dupes]: docs/rules/no-suite-dupes.md
+[no-suite-callback-args]: docs/rules/no-suite-callback-args.md
 [missing-expect]: docs/rules/missing-expect.md
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
