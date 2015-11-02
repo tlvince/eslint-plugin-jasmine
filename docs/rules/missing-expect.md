@@ -1,4 +1,4 @@
-# Enfore expectation (missing-expect)
+# Enforce expectation (missing-expect)
 
 A test which doesn't make any expectations doesn't really test anything.
 
