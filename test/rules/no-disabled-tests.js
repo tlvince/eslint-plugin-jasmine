@@ -8,7 +8,8 @@ var eslintTester = new RuleTester();
 eslintTester.run('no-disabled-tests', rule, {
   valid: [
     'describe("", function() {})',
-    'describe("", function() { it("", function() {} ) })'
+    'describe("", function() { it("", function() {} ) })',
+    'x = {a: xdescribe}'
   ],
 
   invalid: [
@@ -17,7 +18,7 @@ eslintTester.run('no-disabled-tests', rule, {
       errors: [
         {
           message: 'Unexpected xdescribe.',
-          type: 'Identifier'
+          type: 'CallExpression'
         }
       ]
     },
@@ -26,7 +27,7 @@ eslintTester.run('no-disabled-tests', rule, {
       errors: [
         {
           message: 'Unexpected xit.',
-          type: 'Identifier'
+          type: 'CallExpression'
         }
       ]
     }
