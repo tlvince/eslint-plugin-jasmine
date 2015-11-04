@@ -8,7 +8,8 @@ var eslintTester = new RuleTester();
 eslintTester.run('no-focused-tests', rule, {
   valid: [
     'describe("", function() {})',
-    'describe("", function() { it("", function() {} ) })'
+    'describe("", function() { it("", function() {} ) })',
+    'x = {a: ddescribe}'
   ],
 
   invalid: [
@@ -17,7 +18,7 @@ eslintTester.run('no-focused-tests', rule, {
       errors: [
         {
           message: 'Unexpected ddescribe.',
-          type: 'Identifier'
+          type: 'CallExpression'
         }
       ]
     },
@@ -26,7 +27,7 @@ eslintTester.run('no-focused-tests', rule, {
       errors: [
         {
           message: 'Unexpected iit.',
-          type: 'Identifier'
+          type: 'CallExpression'
         }
       ]
     },
@@ -35,7 +36,7 @@ eslintTester.run('no-focused-tests', rule, {
       errors: [
         {
           message: 'Unexpected fdescribe.',
-          type: 'Identifier'
+          type: 'CallExpression'
         }
       ]
     },
@@ -44,7 +45,7 @@ eslintTester.run('no-focused-tests', rule, {
       errors: [
         {
           message: 'Unexpected fit.',
-          type: 'Identifier'
+          type: 'CallExpression'
         }
       ]
     }
