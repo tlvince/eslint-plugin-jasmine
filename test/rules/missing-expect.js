@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-var rule = require('../../lib/rules/missing-expect');
-var RuleTester = require('eslint').RuleTester;
+var rule = require('../../lib/rules/missing-expect')
+var RuleTester = require('eslint').RuleTester
 
-var eslintTester = new RuleTester();
+var eslintTester = new RuleTester()
 
 eslintTester.run('missing-expect', rule, {
   valid: [
@@ -87,4 +87,4 @@ eslintTester.run('missing-expect', rule, {
       ]
     }
   ]
-});
+})

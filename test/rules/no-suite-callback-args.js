@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-var rule = require('../../lib/rules/no-suite-callback-args');
-var RuleTester = require('eslint').RuleTester;
+var rule = require('../../lib/rules/no-suite-callback-args')
+var RuleTester = require('eslint').RuleTester
 
-var eslintTester = new RuleTester();
+var eslintTester = new RuleTester()
 
 eslintTester.run('describe-with-done', rule, {
   valid: [
@@ -21,7 +21,7 @@ eslintTester.run('describe-with-done', rule, {
       code: 'describe("A suite", function(done) {});',
       errors: [
         {
-          message: 'Unexpected argument in suite\'s callback'
+          message: "Unexpected argument in suite's callback"
         }
       ]
     },
@@ -29,7 +29,7 @@ eslintTester.run('describe-with-done', rule, {
       code: 'fdescribe("A suite", function(done) {});',
       errors: [
         {
-          message: 'Unexpected argument in suite\'s callback'
+          message: "Unexpected argument in suite's callback"
         }
       ]
     },
@@ -37,7 +37,7 @@ eslintTester.run('describe-with-done', rule, {
       code: 'ddescribe("A suite", function(done) {});',
       errors: [
         {
-          message: 'Unexpected argument in suite\'s callback'
+          message: "Unexpected argument in suite's callback"
         }
       ]
     },
@@ -45,7 +45,7 @@ eslintTester.run('describe-with-done', rule, {
       code: 'xdescribe("A suite", function(done) {});',
       errors: [
         {
-          message: 'Unexpected argument in suite\'s callback'
+          message: "Unexpected argument in suite's callback"
         }
       ]
     },
@@ -53,7 +53,7 @@ eslintTester.run('describe-with-done', rule, {
       code: 'describe("A suite", function(done) {\nit("A spec", function() {});\n});',
       errors: [
         {
-          message: 'Unexpected argument in suite\'s callback'
+          message: "Unexpected argument in suite's callback"
         }
       ]
     },
@@ -61,7 +61,7 @@ eslintTester.run('describe-with-done', rule, {
       code: 'describe("A suite", function(done) {\nit("A spec", function(done) {});\n});',
       errors: [
         {
-          message: 'Unexpected argument in suite\'s callback'
+          message: "Unexpected argument in suite's callback"
         }
       ]
     },
@@ -69,9 +69,9 @@ eslintTester.run('describe-with-done', rule, {
       code: 'describe("A suite", function(done) {\nit("A spec", function(done) {\ndone();\n});\n });',
       errors: [
         {
-          message: 'Unexpected argument in suite\'s callback'
+          message: "Unexpected argument in suite's callback"
         }
       ]
     }
   ]
-});
+})

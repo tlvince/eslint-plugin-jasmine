@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "pretest": "eslint index.js lib test",
+    "pretest": "standard",
     "test": "mocha",
     "watch": "mocha --watch",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
@@ -29,9 +29,8 @@
   },
   "homepage": "https://github.com/tlvince/eslint-plugin-jasmine",
   "devDependencies": {
-    "eslint": "^1.1.0",
-    "eslint-config-tlvince": "^1.2.0",
     "mocha": "^2.2.5",
-    "semantic-release": "^4.0.2"
+    "semantic-release": "^4.0.2",
+    "standard": "^5.3.1"
   }
 }

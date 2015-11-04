@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-var rule = require('../../lib/rules/no-disabled-tests');
-var RuleTester = require('eslint').RuleTester;
+var rule = require('../../lib/rules/no-disabled-tests')
+var RuleTester = require('eslint').RuleTester
 
-var eslintTester = new RuleTester();
+var eslintTester = new RuleTester()
 
 eslintTester.run('no-disabled-tests', rule, {
   valid: [
@@ -32,4 +32,4 @@ eslintTester.run('no-disabled-tests', rule, {
       ]
     }
   ]
-});
+})

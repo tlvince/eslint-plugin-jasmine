@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-var rule = require('../../lib/rules/no-focused-tests');
-var RuleTester = require('eslint').RuleTester;
+var rule = require('../../lib/rules/no-focused-tests')
+var RuleTester = require('eslint').RuleTester
 
-var eslintTester = new RuleTester();
+var eslintTester = new RuleTester()
 
 eslintTester.run('no-focused-tests', rule, {
   valid: [
@@ -50,4 +50,4 @@ eslintTester.run('no-focused-tests', rule, {
       ]
     }
   ]
-});
+})

@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
-var rule = require('../../lib/rules/no-spec-dupes');
-var RuleTester = require('eslint').RuleTester;
+var rule = require('../../lib/rules/no-spec-dupes')
+var RuleTester = require('eslint').RuleTester
 
-var eslintTester = new RuleTester();
+var eslintTester = new RuleTester()
 
 /*
  * Generate readble code lines block
@@ -13,8 +13,8 @@ var eslintTester = new RuleTester();
  * ...
  * lines[n]
  */
-function toCode(lines, description) {
-  return (description ? '// ' + description : '') + '\n' + lines.join('\n');
+function toCode (lines, description) {
+  return (description ? '// ' + description : '') + '\n' + lines.join('\n')
 }
 
 eslintTester.run('no-spec-dupes', rule, {
@@ -227,4 +227,4 @@ eslintTester.run('no-spec-dupes', rule, {
       ]
     }
   ]
-});
+})

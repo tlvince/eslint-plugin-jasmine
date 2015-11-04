@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = {
   rules: {
@@ -17,4 +17,4 @@ module.exports = {
     'missing-expect': 0,
     'no-suite-callback-args': 2
   }
-};
+}
