@@ -8,7 +8,8 @@ module.exports = {
     'no-spec-dupes': require('./lib/rules/no-spec-dupes'),
     'missing-expect': require('./lib/rules/missing-expect'),
     'no-suite-callback-args': require('./lib/rules/no-suite-callback-args'),
-    'valid-expect': require('./lib/rules/valid-expect')
+    'valid-expect': require('./lib/rules/valid-expect'),
+    'no-assign-spyon': require('./lib/rules/no-assign-spyon')
   },
   rulesConfig: {
     'no-focused-tests': 2,
@@ -17,6 +18,7 @@ module.exports = {
     'no-spec-dupes': 1,
     'missing-expect': 0,
     'no-suite-callback-args': 2,
-    'valid-expect': 1
+    'valid-expect': 1,
+    'no-assign-spyon': 0
   }
 }
