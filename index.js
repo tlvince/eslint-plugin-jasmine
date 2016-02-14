@@ -2,6 +2,7 @@
 
 module.exports = {
   rules: {
+    'named-spy': require('./lib/rules/named-spy'),
     'no-focused-tests': require('./lib/rules/no-focused-tests'),
     'no-disabled-tests': require('./lib/rules/no-disabled-tests'),
     'no-suite-dupes': require('./lib/rules/no-suite-dupes'),
@@ -11,6 +12,7 @@ module.exports = {
     'valid-expect': require('./lib/rules/valid-expect')
   },
   rulesConfig: {
+    'named-spy': 0,
     'no-focused-tests': 2,
     'no-disabled-tests': 1,
     'no-suite-dupes': 1,
