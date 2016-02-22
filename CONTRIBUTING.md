@@ -11,7 +11,7 @@ If in doubt, file an issue first.
 
 Thanks!
 
-[cc]: https://github.com/ajoslin/conventional-changelog/blob/master/conventions/angular.md
+[cc]: https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit
 [docs]: docs/rules
 [index.js]: index.js
 [configuration table]: README.md#configuration
