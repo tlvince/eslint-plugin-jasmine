@@ -65,9 +65,10 @@ See [configuring rules][] for more information.
 
 ## Recommended configuration
 
-This plugin export a `recommended` configuration that enforce good practices.
+This plugin exports a `recommended` configuration that enforces good practices.
 
-To enable this configuration use the `extends` property in your `.eslintrc` config file:
+To enable this configuration, use the `extends` property in your `.eslintrc`
+config file:
 
 ```js
 {
@@ -78,7 +79,10 @@ To enable this configuration use the `extends` property in your `.eslintrc` conf
 }
 ```
 
-See [ESLint documentation](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) for more information about extending configuration files.
+See the [ESLint config docs][] for more information about extending
+configuration files.
+
+[eslint config docs]: http://eslint.org/docs/user-guide/configuring#extending-configuration-files
 
 ## Author
 
