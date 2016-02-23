@@ -63,6 +63,23 @@ See [configuring rules][] for more information.
 [valid-expect]: docs/rules/valid-expect.md
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
+## Recommended configuration
+
+This plugin export a `recommended` configuration that enforce React good practices.
+
+To enable this configuration use the `extends` property in your `.eslintrc` config file:
+
+```js
+{
+  "plugins": [
+    "jasmine"
+  ],
+  "extends": "plugin:jasmine/recommended"
+}
+```
+
+See [ESLint documentation](http://eslint.org/docs/user-guide/configuring#extending-configuration-files) for more information about extending configuration files.
+
 ## Author
 
 © 2015 Tom Vincent <git@tlvince.com>

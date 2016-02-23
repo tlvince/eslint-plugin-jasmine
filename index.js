@@ -11,14 +11,18 @@ module.exports = {
     'no-suite-callback-args': require('./lib/rules/no-suite-callback-args'),
     'valid-expect': require('./lib/rules/valid-expect')
   },
-  rulesConfig: {
-    'named-spy': 0,
-    'no-focused-tests': 2,
-    'no-disabled-tests': 1,
-    'no-suite-dupes': 1,
-    'no-spec-dupes': 1,
-    'missing-expect': 0,
-    'no-suite-callback-args': 2,
-    'valid-expect': 1
+  configs: {
+    recommended: {
+      rules: {
+        'named-spy': 0,
+        'no-focused-tests': 2,
+        'no-disabled-tests': 1,
+        'no-suite-dupes': 1,
+        'no-spec-dupes': 1,
+        'missing-expect': 0,
+        'no-suite-callback-args': 2,
+        'valid-expect': 1
+      }
+    }
   }
 }
