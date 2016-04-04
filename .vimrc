@@ -1,2 +1,2 @@
 let $PATH = './node_modules/.bin:' . $PATH
-let g:syntastic_javascript_checkers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['standard']
