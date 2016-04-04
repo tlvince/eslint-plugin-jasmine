@@ -22,22 +22,41 @@
       - jasmine
     ```
 
+By default, no rules are enabled. See the next section for more.
+
 ## Configuration
 
-This plugin ships with a default configuration for each rule:
+This plugin exports a `recommended` configuration that enforces good practices.
 
-Rule                         | Default       | Options
-----                         | -------       | -------
-[no-focused-tests][]         | 2             |
-[no-disabled-tests][]        | 1             |
-[no-spec-dupes][]            | 1, 'block'    | ['block', 'branch']
-[no-suite-dupes][]           | 1, 'block'    | ['block', 'branch']
-[no-suite-callback-args][]   | 2             |
-[missing-expect][]           | 0, 'expect()' | expectation function names
-[valid-expect][]             | 1             |
+To enable this configuration, use the `extends` property in your `.eslintrc`
+config file:
 
-For example, the `no-focused-tests` rule is enabled by default and will cause
-ESLint to throw an error (with an exit code of `1`) when triggered.
+```yaml
+plugins:
+  - jasmine
+extends: 'plugin:jasmine/recommended'
+```
+
+See the [ESLint config docs][] for more information about extending
+configuration files.
+
+[eslint config docs]: http://eslint.org/docs/user-guide/configuring#extending-configuration-files
+
+### Rules
+
+Rule                         | Recommended      | Options
+----                         | -----------      | -------
+[no-focused-tests][]         | 2                |
+[no-disabled-tests][]        | 1                |
+[no-spec-dupes][]            | 1, `'block'`     | `['block', 'branch']`
+[no-suite-dupes][]           | 1, `'block'`     | `['block', 'branch']`
+[no-suite-callback-args][]   | 2                |
+[missing-expect][]           | 0, `'expect()'`  | expectation function names
+[valid-expect][]             | 1                |
+
+For example, using the recommended configuration, the `no-focused-tests` rule
+is enabled and will cause ESLint to throw an error (with an exit code of `1`)
+when triggered.
 
 You may customise each rule by adding a value in your `.eslintrc` `rules`
 property:
@@ -49,7 +68,7 @@ rules:
   jasmine/no-focused-tests: 0
   jasmine/no-suite-dupes:
     - 2
-    - "branch"
+    - branch
 ```
 
 See [configuring rules][] for more information.
@@ -63,31 +82,12 @@ See [configuring rules][] for more information.
 [valid-expect]: docs/rules/valid-expect.md
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
-## Recommended configuration
-
-This plugin exports a `recommended` configuration that enforces good practices.
-
-To enable this configuration, use the `extends` property in your `.eslintrc`
-config file:
-
-```js
-{
-  "plugins": [
-    "jasmine"
-  ],
-  "extends": "plugin:jasmine/recommended"
-}
-```
-
-See the [ESLint config docs][] for more information about extending
-configuration files.
-
-[eslint config docs]: http://eslint.org/docs/user-guide/configuring#extending-configuration-files
-
 ## Author
 
-© 2015 Tom Vincent <git@tlvince.com>
+© 2016 Tom Vincent <git@tlvince.com> and [contributors][].
+
+[contributors]: https://github.com/tlvince/eslint-plugin-jasmine/graphs/contributors
 
 ## License
 
-Licensed under the [MIT license](http://tlvince.mit-license.org).
+Released under the [MIT license](http://tlvince.mit-license.org).
