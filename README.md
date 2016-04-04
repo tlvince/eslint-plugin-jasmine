@@ -46,13 +46,15 @@ configuration files.
 
 Rule                         | Recommended      | Options
 ----                         | -----------      | -------
+[named-spy][]                | 0                |
 [no-focused-tests][]         | 2                |
 [no-disabled-tests][]        | 1                |
-[no-spec-dupes][]            | 1, `'block'`     | `['block', 'branch']`
 [no-suite-dupes][]           | 1, `'block'`     | `['block', 'branch']`
-[no-suite-callback-args][]   | 2                |
+[no-spec-dupes][]            | 1, `'block'`     | `['block', 'branch']`
 [missing-expect][]           | 0, `'expect()'`  | expectation function names
+[no-suite-callback-args][]   | 2                |
 [valid-expect][]             | 1                |
+[no-assign-spyon][]          | 0                |
 
 For example, using the recommended configuration, the `no-focused-tests` rule
 is enabled and will cause ESLint to throw an error (with an exit code of `1`)
@@ -73,13 +75,16 @@ rules:
 
 See [configuring rules][] for more information.
 
+[named-spy]: docs/rules/named-spy.md
 [no-focused-tests]: docs/rules/no-focused-tests.md
 [no-disabled-tests]: docs/rules/no-disabled-tests.md
-[no-spec-dupes]: docs/rules/no-spec-dupes.md
 [no-suite-dupes]: docs/rules/no-suite-dupes.md
-[no-suite-callback-args]: docs/rules/no-suite-callback-args.md
+[no-spec-dupes]: docs/rules/no-spec-dupes.md
 [missing-expect]: docs/rules/missing-expect.md
+[no-suite-callback-args]: docs/rules/no-suite-callback-args.md
 [valid-expect]: docs/rules/valid-expect.md
+[no-assign-spyon]: docs/rules/no-assign-spyon.md
+
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
 ## Author
