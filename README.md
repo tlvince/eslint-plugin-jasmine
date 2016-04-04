@@ -1,9 +1,15 @@
 # eslint-plugin-jasmine
 
 [![Build Status][travis-image]][travis-url]
+[![npm version][npm-image]][npm-url]
+[![License][license-image]][license-url]
 
 [travis-url]: https://travis-ci.org/tlvince/eslint-plugin-jasmine
 [travis-image]: https://img.shields.io/travis/tlvince/eslint-plugin-jasmine.svg
+[npm-url]: https://www.npmjs.com/package/eslint-plugin-jasmine
+[npm-image]: https://img.shields.io/npm/v/eslint-plugin-jasmine.svg
+[license-url]: https://opensource.org/licenses/MIT
+[license-image]: https://img.shields.io/npm/l/eslint-plugin-jasmine.svg
 
 > ESLint rules for Jasmine
 
