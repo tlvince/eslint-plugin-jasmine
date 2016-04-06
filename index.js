@@ -15,15 +15,15 @@ module.exports = {
   configs: {
     recommended: {
       rules: {
-        'named-spy': 0,
-        'no-focused-tests': 2,
-        'no-disabled-tests': 1,
-        'no-suite-dupes': 1,
-        'no-spec-dupes': 1,
-        'missing-expect': 0,
-        'no-suite-callback-args': 2,
-        'valid-expect': 1,
-        'no-assign-spyon': 0
+        'jasmine/named-spy': 0,
+        'jasmine/no-focused-tests': 2,
+        'jasmine/no-disabled-tests': 1,
+        'jasmine/no-suite-dupes': 1,
+        'jasmine/no-spec-dupes': 1,
+        'jasmine/missing-expect': 0,
+        'jasmine/no-suite-callback-args': 2,
+        'jasmine/valid-expect': 1,
+        'jasmine/no-assign-spyon': 0
       }
     }
   }
