@@ -28,7 +28,19 @@
       - jasmine
     ```
 
+ESLint itself provides a [Jasmine environment][env] for Jasmine's global
+variables. It's therefore recommended to also enable it in your `.eslintrc`:
+
+```yaml
+plugins:
+  - jasmine
+env:
+  jasmine: true
+```
+
 By default, no rules are enabled. See the next section for more.
+
+[env]: http://eslint.org/docs/user-guide/configuring#specifying-environments
 
 ## Configuration
 
@@ -40,6 +52,8 @@ config file:
 ```yaml
 plugins:
   - jasmine
+env:
+  jasmine: true
 extends: 'plugin:jasmine/recommended'
 ```
 
@@ -72,6 +86,8 @@ property:
 ```yaml
 plugins:
   - jasmine
+env:
+  jasmine: true
 rules:
   jasmine/no-focused-tests: 0
   jasmine/no-suite-dupes:
