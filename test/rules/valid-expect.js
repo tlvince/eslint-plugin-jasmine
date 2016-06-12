@@ -41,6 +41,9 @@ eslintTester.run('valid-expect', rule, {
       code: 'expect("something");',
       errors: [
         {
+          message: 'Matcher was not called'
+        },
+        {
           message: 'Nothing called on expect()'
         }
       ]
@@ -52,7 +55,18 @@ eslintTester.run('valid-expect', rule, {
           message: 'No arguments passed to expect()'
         },
         {
+          message: 'Matcher was not called'
+        },
+        {
           message: 'Nothing called on expect()'
+        }
+      ]
+    },
+    {
+      code: 'expect(true).toBeDefined;',
+      errors: [
+        {
+          message: 'Matcher was not called'
         }
       ]
     }
