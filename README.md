@@ -75,6 +75,7 @@ Rule                         | Recommended      | Options
 [no-suite-callback-args][]   | 2                |
 [valid-expect][]             | 1                |
 [no-assign-spyon][]          | 0                |
+[no-unsafe-spy][]            | 1                |
 
 For example, using the recommended configuration, the `no-focused-tests` rule
 is enabled and will cause ESLint to throw an error (with an exit code of `1`)
@@ -106,6 +107,7 @@ See [configuring rules][] for more information.
 [no-suite-callback-args]: docs/rules/no-suite-callback-args.md
 [valid-expect]: docs/rules/valid-expect.md
 [no-assign-spyon]: docs/rules/no-assign-spyon.md
+[no-unsafe-spy]: docs/rules/no-unsafe-spy.md
 
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 

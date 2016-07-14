@@ -1,43 +1,32 @@
 'use strict'
 
 var rule = require('../../lib/rules/no-suite-dupes')
+var linesToCode = require('../helpers/lines_to_code')
 var RuleTester = require('eslint').RuleTester
 
 var eslintTester = new RuleTester()
 
-/*
- * Generate readble code lines block
- * // description
- * lines[0]
- * lines[1]
- * ...
- * lines[n]
- */
-function toCode (lines, description) {
-  return (description ? '// ' + description : '') + '\n' + lines.join('\n')
-}
-
 eslintTester.run('no-suite-dupes', rule, {
   valid: [
     // default
-    toCode([
+    linesToCode([
       'describe("The first suite name", function() {}); ',
       'describe("The second suite name", function() {})'
     ]),
-    toCode([
+    linesToCode([
       'unrelated("The first spec name", function() {}); ',
       'unrelated("The second spec name", function() {})'
     ], 'unrelated'),
-    toCode([
+    linesToCode([
       // used to cause bug
       'justAFunction();'
     ], 'a regular function'),
-    toCode([
+    linesToCode([
       'describe("Handling" + " string " + "concatenation", function() {}); ',
       'describe("Handling" + " it good", function() {})'
     ], 'description is concatenated string'),
     {
-      code: toCode([
+      code: linesToCode([
         'describe("Some context", function() {',
         '  // it(...',
         '});',
@@ -52,7 +41,7 @@ eslintTester.run('no-suite-dupes', rule, {
       options: [
         'block'
       ],
-      code: toCode([
+      code: linesToCode([
         'describe("The first suite name", function() {}); ',
         'describe("The second suite name", function() {})'
       ])
@@ -63,7 +52,7 @@ eslintTester.run('no-suite-dupes', rule, {
       options: [
         'branch'
       ],
-      code: toCode([
+      code: linesToCode([
         'describe("The first suite name", function() {}); ',
         'describe("The second suite name", function() {})'
       ])
@@ -72,7 +61,7 @@ eslintTester.run('no-suite-dupes', rule, {
       options: [
         'branch'
       ],
-      code: toCode([
+      code: linesToCode([
         'describe("unique", function(){',
         '  // it(...',
         '});',
@@ -85,7 +74,7 @@ eslintTester.run('no-suite-dupes', rule, {
       options: [
         'branch'
       ],
-      code: toCode([
+      code: linesToCode([
         'describe("context", function(){',
         '  describe("unique", function(){',
         '    // it(...',
@@ -100,7 +89,7 @@ eslintTester.run('no-suite-dupes', rule, {
       options: [
         'branch'
       ],
-      code: toCode([
+      code: linesToCode([
         'describe("same", function(){',
         '  describe("same", function(){',
         '    // it(...',
@@ -112,7 +101,7 @@ eslintTester.run('no-suite-dupes', rule, {
   invalid: [
     {
       // default
-      code: toCode([
+      code: linesToCode([
         'describe("Same suite name", function() {});',
         'describe("Same suite name", function() {})'
       ]),
@@ -124,7 +113,7 @@ eslintTester.run('no-suite-dupes', rule, {
       ]
     },
     {
-      code: toCode([
+      code: linesToCode([
         'describe("Handling" + " string " + "concatenation", function() {}); ',
         'describe("Handling string concatenation", function() {})'
       ], 'description is concatenated string'),
@@ -141,7 +130,7 @@ eslintTester.run('no-suite-dupes', rule, {
       options: [
         'block'
       ],
-      code: toCode([
+      code: linesToCode([
         'describe("Same suite name", function() {}); ',
         'describe("Same suite name", function() {})'
       ]),
@@ -156,7 +145,7 @@ eslintTester.run('no-suite-dupes', rule, {
       options: [
         'block'
       ],
-      code: toCode([
+      code: linesToCode([
         'describe("Parent context", function(){',
         '  describe("Same block", function(){',
         '    describe("Same block", function(){',
@@ -178,7 +167,7 @@ eslintTester.run('no-suite-dupes', rule, {
       options: [
         'branch'
       ],
-      code: toCode([
+      code: linesToCode([
         'describe("Same suite name", function() {}); ',
         'describe("Same suite name", function() {})'
       ], 'same blocks'),
@@ -193,7 +182,7 @@ eslintTester.run('no-suite-dupes', rule, {
       options: [
         'branch'
       ],
-      code: toCode([
+      code: linesToCode([
         'describe("parent context", function(){',
         '  describe("same", function(){',
         '    // it(...',
@@ -214,7 +203,7 @@ eslintTester.run('no-suite-dupes', rule, {
       options: [
         'branch'
       ],
-      code: toCode([
+      code: linesToCode([
         'describe("parent context", function(){',
         '  describe("same", function(){',
         '    // it(...',
