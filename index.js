@@ -10,7 +10,8 @@ module.exports = {
     'missing-expect': require('./lib/rules/missing-expect'),
     'no-suite-callback-args': require('./lib/rules/no-suite-callback-args'),
     'valid-expect': require('./lib/rules/valid-expect'),
-    'no-assign-spyon': require('./lib/rules/no-assign-spyon')
+    'no-assign-spyon': require('./lib/rules/no-assign-spyon'),
+    'no-unsafe-spy': require('./lib/rules/no-unsafe-spy')
   },
   configs: {
     recommended: {
@@ -23,7 +24,8 @@ module.exports = {
         'jasmine/missing-expect': 0,
         'jasmine/no-suite-callback-args': 2,
         'jasmine/valid-expect': 1,
-        'jasmine/no-assign-spyon': 0
+        'jasmine/no-assign-spyon': 0,
+        'jasmine/no-unsafe-spy': 1
       }
     }
   }
