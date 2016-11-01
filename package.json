@@ -40,5 +40,9 @@
     "ghooks": {
       "commit-msg": "validate-commit-msg"
     }
+  },
+  "engines": {
+    "npm": ">=3",
+    "node": ">=6"
   }
 }
