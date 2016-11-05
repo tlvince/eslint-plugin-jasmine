@@ -1,13 +1,10 @@
-# Hello! 👋
+<!-- Fill your answers in between -->
+**Do you want to request a *feature* or report a *bug*?**
 
-Do you find eslint-plugin-jasmine useful?
+**What is the current behavior?**
 
-Unfortunately, I have little time to maintain it at the moment and would love
-some help.
+**If the current behavior is a bug, please provide the steps to reproduce.**
 
-If you're able to isolate an issue or make improvements, a pull request is
-gladly welcome.
+**What is the expected behavior?**
 
-If you're interested in helping to maintain the repo, please get in touch.
-
---- @tlvince
+**Please mention your node.js, eslint-plugin-jasmine and operating system version.**
