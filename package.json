@@ -19,6 +19,9 @@
     "jasmine"
   ],
   "author": "Tom Vincent <npm@tlvince.com> (http://tlvince.com/)",
+  "contributors": [
+    { "name": "Nicolas Fernandez", "url": "https://github.com/burabure" }
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
