@@ -1,13 +1,6 @@
 # Hello! 👋
 
-Do you find eslint-plugin-jasmine useful?
-
-Unfortunately, I have little time to maintain it at the moment and would love
-some help.
-
-If you're able to isolate an issue or make improvements, a pull request is
-gladly welcome.
-
-If you're interested in helping to maintain the repo, please get in touch.
-
---- @tlvince
+Before submitting a pull request please make sure your commit message follows
+[Angular commit conventions](https://github.com/conventional-changelog/conventional-changelog-angular/blob/master/convention.md)
+That way, when it's merged, [semantic-release](https://github.com/semantic-release/semantic-release)
+will kick in and will publish your changes to npm automatically.
