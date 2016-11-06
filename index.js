@@ -11,7 +11,8 @@ module.exports = {
     'no-suite-callback-args': require('./lib/rules/no-suite-callback-args'),
     'valid-expect': require('./lib/rules/valid-expect'),
     'no-assign-spyon': require('./lib/rules/no-assign-spyon'),
-    'no-unsafe-spy': require('./lib/rules/no-unsafe-spy')
+    'no-unsafe-spy': require('./lib/rules/no-unsafe-spy'),
+    'no-global-setup': require('./lib/rules/no-global-setup')
   },
   configs: {
     recommended: {
@@ -25,7 +26,8 @@ module.exports = {
         'jasmine/no-suite-callback-args': 2,
         'jasmine/valid-expect': 1,
         'jasmine/no-assign-spyon': 0,
-        'jasmine/no-unsafe-spy': 1
+        'jasmine/no-unsafe-spy': 1,
+        'jasmine/no-global-setup': 1
       }
     }
   }
