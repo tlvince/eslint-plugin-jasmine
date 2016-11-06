@@ -27,7 +27,7 @@ module.exports = {
         'jasmine/valid-expect': 1,
         'jasmine/no-assign-spyon': 0,
         'jasmine/no-unsafe-spy': 1,
-        'jasmine/no-global-setup': 1
+        'jasmine/no-global-setup': 2
       }
     }
   }

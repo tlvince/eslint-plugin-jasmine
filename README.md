@@ -76,7 +76,7 @@ Rule                         | Recommended      | Options
 [valid-expect][]             | 1                |
 [no-assign-spyon][]          | 0                |
 [no-unsafe-spy][]            | 1                |
-[no-global-setup][]          | 1                |
+[no-global-setup][]          | 2                |
 
 For example, using the recommended configuration, the `no-focused-tests` rule
 is enabled and will cause ESLint to throw an error (with an exit code of `1`)
