@@ -5,7 +5,18 @@ Ensure `expect()` is called with a single argument and there is an actual expect
 ## Rule details
 
 This rule triggers a warning if `expect()` is called with more than one argument or without arguments. 
-It would also issue a warning if there is nothing called on `expect()` and when a matcher was not called.
+It would also issue a warning if there is nothing called on `expect()`, e.g.:
+
+```js
+expect();
+expect("something");
+```
+
+or when a matcher function was not called, e.g.:
+
+```js
+expect(true).toBeDefined
+```
 
 This rule is enabled by default.
 
