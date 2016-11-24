@@ -12,7 +12,8 @@ module.exports = {
     'valid-expect': require('./lib/rules/valid-expect'),
     'no-assign-spyon': require('./lib/rules/no-assign-spyon'),
     'no-unsafe-spy': require('./lib/rules/no-unsafe-spy'),
-    'no-global-setup': require('./lib/rules/no-global-setup')
+    'no-global-setup': require('./lib/rules/no-global-setup'),
+    'no-expect-in-setup-teardown': require('./lib/rules/no-expect-in-setup-teardown')
   },
   configs: {
     recommended: {
@@ -27,7 +28,8 @@ module.exports = {
         'jasmine/valid-expect': 1,
         'jasmine/no-assign-spyon': 0,
         'jasmine/no-unsafe-spy': 1,
-        'jasmine/no-global-setup': 2
+        'jasmine/no-global-setup': 2,
+        'jasmine/no-expect-in-setup-teardown': 0
       }
     }
   }

@@ -64,19 +64,20 @@ configuration files.
 
 ### Rules
 
-Rule                         | Recommended      | Options
-----                         | -----------      | -------
-[named-spy][]                | 0                |
-[no-focused-tests][]         | 2                |
-[no-disabled-tests][]        | 1                |
-[no-suite-dupes][]           | 1, `'block'`     | `['block', 'branch']`
-[no-spec-dupes][]            | 1, `'block'`     | `['block', 'branch']`
-[missing-expect][]           | 0, `'expect()'`  | expectation function names
-[no-suite-callback-args][]   | 2                |
-[valid-expect][]             | 1                |
-[no-assign-spyon][]          | 0                |
-[no-unsafe-spy][]            | 1                |
-[no-global-setup][]          | 2                |
+Rule                            | Recommended      | Options
+----                            | -----------      | -------
+[named-spy][]                   | 0                |
+[no-focused-tests][]            | 2                |
+[no-disabled-tests][]           | 1                |
+[no-suite-dupes][]              | 1, `'block'`     | `['block', 'branch']`
+[no-spec-dupes][]               | 1, `'block'`     | `['block', 'branch']`
+[missing-expect][]              | 0, `'expect()'`  | expectation function names
+[no-suite-callback-args][]      | 2                |
+[valid-expect][]                | 1                |
+[no-assign-spyon][]             | 0                |
+[no-unsafe-spy][]               | 1                |
+[no-global-setup][]             | 2                |
+[no-expect-in-setup-teardown][] | 0, `'expect()'`  | expectation function names
 
 For example, using the recommended configuration, the `no-focused-tests` rule
 is enabled and will cause ESLint to throw an error (with an exit code of `1`)
@@ -110,6 +111,7 @@ See [configuring rules][] for more information.
 [no-assign-spyon]: docs/rules/no-assign-spyon.md
 [no-unsafe-spy]: docs/rules/no-unsafe-spy.md
 [no-global-setup]: docs/rules/no-global-setup.md
+[no-expect-in-setup-teardown]: docs/rules/no-expect-in-setup-teardown.md
 
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
