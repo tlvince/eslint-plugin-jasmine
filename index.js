@@ -29,7 +29,7 @@ module.exports = {
         'jasmine/no-assign-spyon': 0,
         'jasmine/no-unsafe-spy': 1,
         'jasmine/no-global-setup': 2,
-        'jasmine/no-expect-in-setup-teardown': 0
+        'jasmine/no-expect-in-setup-teardown': 1
       }
     }
   }
