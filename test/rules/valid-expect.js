@@ -9,7 +9,8 @@ eslintTester.run('valid-expect', rule, {
   valid: [
     'expect("something").toEqual("else");',
     'expect(true).toBeDefined();',
-    'expect([1, 2, 3]).toEqual([1, 2, 3]);'
+    'expect([1, 2, 3]).toEqual([1, 2, 3]);',
+    'expect(undefined).not.toBeDefined();'
   ],
 
   invalid: [
