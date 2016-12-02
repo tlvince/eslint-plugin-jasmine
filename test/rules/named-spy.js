@@ -1,6 +1,7 @@
 'use strict'
 
 var rule = require('../../lib/rules/named-spy')
+var linesToCode = require('../helpers/lines_to_code')
 var RuleTester = require('eslint').RuleTester
 
 var eslintTester = new RuleTester()
@@ -17,7 +18,22 @@ eslintTester.run('named-spy', rule, {
     'other = library.createSpy("onSuccess")',
     // Correct use of named spies
     'var onSuccess = jasmine.createSpy("onSuccess")',
-    'onSuccess = jasmine.createSpy("onSuccess")'
+    'onSuccess = jasmine.createSpy("onSuccess")',
+    linesToCode([
+      'someObject = {',
+      '  someFunc: jasmine.createSpy("someFunc")',
+      '};'
+    ]),
+    linesToCode([
+      'someObject = {',
+      '  someFunc: jasmine.createSpy("someFunc").and.callThrough()',
+      '};'
+    ]),
+    linesToCode([
+      'function someFunc() {',
+      '  this.spy = jasmine.createSpy("spy").and.callThrough()',
+      '};'
+    ])
   ],
   invalid: [
     {
@@ -40,6 +56,36 @@ eslintTester.run('named-spy', rule, {
     },
     {
       code: 'spy = jasmine.createSpy("callback")',
+      errors: [
+        {message: 'Variable should be named after the spy name'}
+      ]
+    },
+    {
+      code: linesToCode([
+        'someObject = {',
+        '  spy: jasmine.createSpy("someFunc")',
+        '};'
+      ]),
+      errors: [
+        {message: 'Variable should be named after the spy name'}
+      ]
+    },
+    {
+      code: linesToCode([
+        'someObject = {',
+        '  spy: jasmine.createSpy("someFunc").and.callThrough()',
+        '};'
+      ]),
+      errors: [
+        {message: 'Variable should be named after the spy name'}
+      ]
+    },
+    {
+      code: linesToCode([
+        'function someFunc() {',
+        '  this.spy = jasmine.createSpy("someSpy").and.callThrough()',
+        '};'
+      ]),
       errors: [
         {message: 'Variable should be named after the spy name'}
       ]
