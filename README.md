@@ -77,7 +77,7 @@ Rule                            | Recommended      | Options
 [no-assign-spyon][]             | 0                |
 [no-unsafe-spy][]               | 1                |
 [no-global-setup][]             | 2                |
-[no-expect-in-setup-teardown][] | 0, `'expect()'`  | expectation function names
+[no-expect-in-setup-teardown][] | 1, `'expect()'`  | expectation function names
 
 For example, using the recommended configuration, the `no-focused-tests` rule
 is enabled and will cause ESLint to throw an error (with an exit code of `1`)
