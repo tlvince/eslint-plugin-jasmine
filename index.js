@@ -13,7 +13,8 @@ module.exports = {
     'no-assign-spyon': require('./lib/rules/no-assign-spyon'),
     'no-unsafe-spy': require('./lib/rules/no-unsafe-spy'),
     'no-global-setup': require('./lib/rules/no-global-setup'),
-    'no-expect-in-setup-teardown': require('./lib/rules/no-expect-in-setup-teardown')
+    'no-expect-in-setup-teardown': require('./lib/rules/no-expect-in-setup-teardown'),
+    'new-line-between-declarations': require('./lib/rules/new-line-between-declarations')
   },
   configs: {
     recommended: {
@@ -29,7 +30,8 @@ module.exports = {
         'jasmine/no-assign-spyon': 0,
         'jasmine/no-unsafe-spy': 1,
         'jasmine/no-global-setup': 2,
-        'jasmine/no-expect-in-setup-teardown': 1
+        'jasmine/no-expect-in-setup-teardown': 1,
+        'jasmine/new-line-between-declarations': 1
       }
     }
   }

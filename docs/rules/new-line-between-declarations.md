@@ -1,0 +1,44 @@
+# Enforce new line between declarations inside a suite
+
+Jasmine uses `describe` to begin and name a test suite.
+For readability purposes this rule enforces that there is a new line between declarations within a suite.
+
+## Rule details
+
+This rule triggers a **warning** (is set to **1** by default) whenever it
+encounters declarations not separated by a new line.
+
+### Block mode (default)
+
+The following patterns are considered warnings:
+
+```js
+describe("", function() {
+  it("", function(){});
+  it("", function(){});
+});
+```
+
+```js
+describe("", function() {
+  beforeEach("", function(){});
+  it("", function(){});
+});
+```
+
+The following patterns are not warnings:
+
+```js
+describe("", function() {
+  it("", function(){});
+
+  it("", function(){});
+});
+```
+
+```js
+describe("", function() {
+  it("", function(){});
+});
+describe("", function() {});
+```
