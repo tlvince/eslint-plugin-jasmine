@@ -2,6 +2,7 @@
 
 Jasmine uses `describe` to begin and name a test suite.
 For readability purposes this rule enforces that there is a new line between declarations within a suite.
+Declarations are `it`, `beforeEach`, `afterEach`, `beforeAll`, `afterAll`
 
 ## Rule details
 
@@ -41,4 +42,13 @@ describe("", function() {
   it("", function(){});
 });
 describe("", function() {});
+```
+
+```js
+describe("", function() {
+  var a = 1;
+  beforeEach(() => {})
+
+  it("", function(){});
+});
 ```
