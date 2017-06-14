@@ -17,6 +17,7 @@ eslintTester.run('space between declarations', rule, {
     ]),
     linesToCode([
       'describe("", function() {',
+      'var a=1;',
       'beforeEach(function(){});',
       '',
       'it("", function(){});',
@@ -26,24 +27,17 @@ eslintTester.run('space between declarations', rule, {
       'describe("", function() {',
       'expect(1).toBe(1);',
       '});'
+    ]),
+    linesToCode([
+      'describe("", function() {',
+      'describe("", function(){',
+      'it("", function(){});',
+      '});',
+      'it("", function(){});',
+      '});'
     ])
   ],
   invalid: [
-    {
-      code: linesToCode([
-        'describe("", function() {',
-        'describe("", function(){',
-        'it("", function(){});',
-        '});',
-        'it("", function(){});',
-        '});'
-      ]),
-      errors: [
-        {
-          message: 'No new line between declarations'
-        }
-      ]
-    },
     {
       code: linesToCode([
         'describe("", function() {',
