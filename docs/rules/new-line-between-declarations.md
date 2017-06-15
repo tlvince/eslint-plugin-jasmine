@@ -26,8 +26,10 @@ describe("", function() {
 });
 ```
 ```js
-describe("", function() {});
-describe("", function() {});
+describe("", function() {
+  describe("", function() {});
+  describe("", function() {});
+});
 ```
 
 The following patterns are not warnings:
