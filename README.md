@@ -114,6 +114,7 @@ See [configuring rules][] for more information.
 [no-unsafe-spy]: docs/rules/no-unsafe-spy.md
 [no-global-setup]: docs/rules/no-global-setup.md
 [no-expect-in-setup-teardown]: docs/rules/no-expect-in-setup-teardown.md
+[new-line-between-declarations]: docs/rules/new-line-between-declarations.md
 
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
