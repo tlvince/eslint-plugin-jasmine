@@ -5,7 +5,7 @@ Spies created in global scope or directly in define blocks don't
 get automatically reset/cleaned by the jasmine teardown process, making it possible
 to get false positives when using ```toHaveBeenCalled()``` / ```toHaveBeenCalledWith()```.
 
-This rule checks for the following methods: `spyOn`, `jasmine.createSpy()`, `jasmine.createSpyObj()`
+This rule checks for the following methods: `spyOn`, `jasmine.createSpy()`, `jasmine.createSpyObj()`.
 
 ## Rule details
 
