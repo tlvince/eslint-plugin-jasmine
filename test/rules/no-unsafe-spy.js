@@ -42,6 +42,14 @@ eslintTester.run('no-unsafe-spy', rule, {
       '  var mySpy = jasmine.createSpy()',
       '  spyOn(someObj, "someMethod")',
       '})'
+    ]),
+    linesToCode([
+      'beforeEach(function () {',
+      '  var tape = jasmine.createSpyObj("tape", ["play", "pause"]);',
+      '   it(function () {',
+      '    expect(tape.play).toBeDefined();',
+      '   })',
+      '})'
     ])
   ],
   invalid: [
@@ -71,6 +79,19 @@ eslintTester.run('no-unsafe-spy', rule, {
       code: linesToCode([
         'describe(function () {',
         '  spyOn(someObj, "someMethod")',
+        '})'
+      ]),
+      errors: [
+        {message: 'Spy declared outside of before/after/it block'}
+      ]
+    },
+    {
+      code: linesToCode([
+        'describe(function () {',
+        '  var tape = jasmine.createSpyObj("tape", ["play", "pause"]);',
+        '   it(function () {',
+        '    expect(tape.play).toBeDefined();',
+        '   })',
         '})'
       ]),
       errors: [
