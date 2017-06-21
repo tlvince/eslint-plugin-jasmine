@@ -15,7 +15,8 @@ module.exports = {
     'no-unsafe-spy': require('./lib/rules/no-unsafe-spy'),
     'no-global-setup': require('./lib/rules/no-global-setup'),
     'no-expect-in-setup-teardown': require('./lib/rules/no-expect-in-setup-teardown'),
-    'new-line-between-declarations': require('./lib/rules/new-line-between-declarations')
+    'new-line-between-declarations': require('./lib/rules/new-line-between-declarations'),
+    'new-line-before-expect': require('./lib/rules/new-line-before-expect')
   },
   configs: {
     recommended: {
@@ -33,7 +34,8 @@ module.exports = {
         'jasmine/no-unsafe-spy': 1,
         'jasmine/no-global-setup': 2,
         'jasmine/no-expect-in-setup-teardown': 1,
-        'jasmine/new-line-between-declarations': 1
+        'jasmine/new-line-between-declarations': 1,
+        'jasmine/new-line-before-expect': 1
       }
     }
   }

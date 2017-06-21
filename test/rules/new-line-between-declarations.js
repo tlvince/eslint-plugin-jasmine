@@ -10,31 +10,31 @@ eslintTester.run('space between declarations', rule, {
   valid: [
     linesToCode([
       'describe("", function() {',
-      'it("", function(){});',
-      '',
-      'it("", function(){});',
+      ' it("", function(){});',
+      ' ',
+      ' it("", function(){});',
       '});'
     ]),
     linesToCode([
       'describe("", function() {',
-      'var a=1;',
-      'beforeEach(function(){});',
-      '',
-      'it("", function(){});',
+      ' var a = 1',
+      ' beforeEach(function(){});',
+      ' ',
+      ' it("", function(){});',
       '});'
     ]),
     linesToCode([
       'describe("", function() {',
-      'expect(1).toBe(1);',
+      ' expect(1).toBe(1);',
       '});'
     ]),
     linesToCode([
       'describe("", function() {',
-      'describe("", function(){',
-      'it("", function(){});',
-      '});',
-      '',
-      'it("", function(){});',
+      ' describe("", function(){',
+      '   it("", function(){});',
+      ' });',
+      ' ',
+      ' it("", function(){});',
       '});'
     ])
   ],
@@ -42,11 +42,11 @@ eslintTester.run('space between declarations', rule, {
     {
       code: linesToCode([
         'describe("", function() {',
-        'describe("", function(){',
-        'it("", function(){});',
-        '});',
-        'it("", function(){});',
-        'it("", function(){});',
+        ' describe("", function() {',
+        '   it("", function(){});',
+        ' });',
+        ' it("", function(){});',
+        ' it("", function(){});',
         '});'
       ]),
       errors: [
@@ -58,8 +58,8 @@ eslintTester.run('space between declarations', rule, {
     {
       code: linesToCode([
         'describe("", function() {',
-        'beforeEach(function(){});',
-        'it("", function(){});',
+        ' beforeEach(function(){});',
+        ' it("", function(){});',
         '});'
       ]),
       errors: [
@@ -71,8 +71,8 @@ eslintTester.run('space between declarations', rule, {
     {
       code: linesToCode([
         'describe("", function() {',
-        'describe("", function() {})',
-        'describe("", function() {})',
+        ' describe("", function() {})',
+        ' describe("", function() {})',
         '})'
       ]),
       errors: [
