@@ -69,6 +69,7 @@ Rule                              | Recommended      | Options
 [named-spy][]                     | 0                |
 [no-focused-tests][]              | 2                |
 [no-disabled-tests][]             | 1                |
+[no-describe-variables][]         | 0                |
 [no-suite-dupes][]                | 1, `'block'`     | `['block', 'branch']`
 [no-spec-dupes][]                 | 1, `'block'`     | `['block', 'branch']`
 [missing-expect][]                | 0, `'expect()'`  | expectation function names
@@ -105,6 +106,7 @@ See [configuring rules][] for more information.
 [named-spy]: docs/rules/named-spy.md
 [no-focused-tests]: docs/rules/no-focused-tests.md
 [no-disabled-tests]: docs/rules/no-disabled-tests.md
+[no-describe-variables]: docs/rules/no-describe-variables.md
 [no-suite-dupes]: docs/rules/no-suite-dupes.md
 [no-spec-dupes]: docs/rules/no-spec-dupes.md
 [missing-expect]: docs/rules/missing-expect.md
@@ -120,7 +122,7 @@ See [configuring rules][] for more information.
 
 ## Author
 
-© 2016 Tom Vincent <git@tlvince.com> and [contributors][].
+© 2016 - 2017 Tom Vincent <git@tlvince.com> and [contributors][].
 
 [contributors]: https://github.com/tlvince/eslint-plugin-jasmine/graphs/contributors
 
