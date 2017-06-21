@@ -33,25 +33,6 @@ describe('Memory leak', function() {
 });
 ```
 
-```js
-describe('Memory leak', function() {
-
-  var a;
-
-  beforeEach(function() {
-    a = new Array(10000000).join('a');
-  });
-  
-  afterEach(function () {
-    a = null; 
-  });
-
-  it('test', function() {
-    expect(a).toBeDefined();
-  });
-});
-```
-
 or
 
 ## Rule details
@@ -59,13 +40,33 @@ or
 The following are considered warnings:
 
 ```js
-var spy = jasmine.createSpy();
-callback = jasmine.createSpy('success');
+describe('Foo', function() {
+  
+  var foo;
+
+  beforeEach(function () {
+    foo = new Foo();
+  });
+
+  it('works', function () {
+    expect(foo).toBeDefined();
+  });
+
+});
 ```
 
 The following patterns are not warnings:
 
 ```js
-var success = jasmine.createSpy('success')
-onError = jasmine.createSpy('onError')
+describe('Bar', function() {
+
+  beforeEach(function () {
+    this.bar = new Bar();
+  });
+
+  it('works', function () {
+    expect(this.bar).toBeDefined();
+  });
+
+});
 ```
