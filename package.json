@@ -20,7 +20,10 @@
   ],
   "author": "Tom Vincent <npm@tlvince.com> (http://tlvince.com/)",
   "contributors": [
-    { "name": "Nicolas Fernandez", "url": "https://github.com/burabure" }
+    {
+      "name": "Nicolas Fernandez",
+      "url": "https://github.com/burabure"
+    }
   ],
   "license": "MIT",
   "repository": {
@@ -32,7 +35,7 @@
   },
   "homepage": "https://github.com/tlvince/eslint-plugin-jasmine",
   "devDependencies": {
-    "eslint": "^3.9.1",
+    "eslint": "^4.0.0",
     "ghooks": "^2.0.0",
     "mocha": "^3.1.2",
     "semantic-release": "^6.3.2",
