@@ -80,6 +80,7 @@ Rule                              | Recommended      | Options
 [no-global-setup][]               | 2                |
 [no-expect-in-setup-teardown][]   | 1, `'expect()'`  | expectation function names
 [new-line-between-declarations][] | 1                |
+[new-line-before-expect][]        | 1                |
 
 
 For example, using the recommended configuration, the `no-focused-tests` rule
@@ -117,6 +118,7 @@ See [configuring rules][] for more information.
 [no-global-setup]: docs/rules/no-global-setup.md
 [no-expect-in-setup-teardown]: docs/rules/no-expect-in-setup-teardown.md
 [new-line-between-declarations]: docs/rules/new-line-between-declarations.md
+[new-line-before-expect]: docs/rules/new-line-before-expect.md
 
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
