@@ -33,8 +33,6 @@ describe('Memory leak', function() {
 });
 ```
 
-or
-
 ## Rule details
 
 The following are considered warnings:
