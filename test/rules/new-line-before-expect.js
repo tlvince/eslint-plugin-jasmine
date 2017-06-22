@@ -19,6 +19,21 @@ eslintTester.run('new line before expect', rule, {
     linesToCode([
       'describe("", function() {',
       ' it("", function(){',
+      '  expect(1).toBe(1)',
+      ' });',
+      '});'
+    ]),
+    linesToCode([
+      'describe("", function() {',
+      ' it("", function(){',
+      '  expect(1).toBe(1)',
+      '  doMoreThings()',
+      ' });',
+      '});'
+    ]),
+    linesToCode([
+      'describe("", function() {',
+      ' it("", function(){',
       '  var a = 1',
       '',
       '  expect(a).toBe(1)',
@@ -31,20 +46,6 @@ eslintTester.run('new line before expect', rule, {
     ])
   ],
   invalid: [
-    {
-      code: linesToCode([
-        'describe("", function() {',
-        ' it("", function(){',
-        '  expect(1).toBe(1)',
-        ' });',
-        '});'
-      ]),
-      errors: [
-        {
-          message: 'No new line before expect'
-        }
-      ]
-    },
     {
       code: linesToCode([
         'describe("", function() {',
