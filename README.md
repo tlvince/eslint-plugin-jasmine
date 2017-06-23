@@ -66,21 +66,21 @@ configuration files.
 
 Rule                              | Recommended      | Options
 ----                              | -----------      | -------
-[named-spy][]                     | 0                |
-[no-focused-tests][]              | 2                |
-[no-disabled-tests][]             | 1                |
-[no-describe-variables][]         | 0                |
-[no-suite-dupes][]                | 1, `'block'`     | `['block', 'branch']`
-[no-spec-dupes][]                 | 1, `'block'`     | `['block', 'branch']`
 [missing-expect][]                | 0, `'expect()'`  | expectation function names
-[no-suite-callback-args][]        | 2                |
-[valid-expect][]                  | 1                |
-[no-assign-spyon][]               | 0                |
-[no-unsafe-spy][]                 | 1                |
-[no-global-setup][]               | 2                |
-[no-expect-in-setup-teardown][]   | 1, `'expect()'`  | expectation function names
-[new-line-between-declarations][] | 1                |
+[named-spy][]                     | 0                |
 [new-line-before-expect][]        | 1                |
+[new-line-between-declarations][] | 1                |
+[no-assign-spyon][]               | 0                |
+[no-describe-variables][]         | 0                |
+[no-disabled-tests][]             | 1                |
+[no-expect-in-setup-teardown][]   | 1, `'expect()'`  | expectation function names
+[no-focused-tests][]              | 2                |
+[no-global-setup][]               | 2                |
+[no-spec-dupes][]                 | 1, `'block'`     | `['block', 'branch']`
+[no-suite-callback-args][]        | 2                |
+[no-suite-dupes][]                | 1, `'block'`     | `['block', 'branch']`
+[no-unsafe-spy][]                 | 1                |
+[valid-expect][]                  | 1                |
 
 
 For example, using the recommended configuration, the `no-focused-tests` rule
@@ -104,21 +104,21 @@ rules:
 
 See [configuring rules][] for more information.
 
-[named-spy]: docs/rules/named-spy.md
-[no-focused-tests]: docs/rules/no-focused-tests.md
-[no-disabled-tests]: docs/rules/no-disabled-tests.md
-[no-describe-variables]: docs/rules/no-describe-variables.md
-[no-suite-dupes]: docs/rules/no-suite-dupes.md
-[no-spec-dupes]: docs/rules/no-spec-dupes.md
 [missing-expect]: docs/rules/missing-expect.md
-[no-suite-callback-args]: docs/rules/no-suite-callback-args.md
-[valid-expect]: docs/rules/valid-expect.md
-[no-assign-spyon]: docs/rules/no-assign-spyon.md
-[no-unsafe-spy]: docs/rules/no-unsafe-spy.md
-[no-global-setup]: docs/rules/no-global-setup.md
-[no-expect-in-setup-teardown]: docs/rules/no-expect-in-setup-teardown.md
-[new-line-between-declarations]: docs/rules/new-line-between-declarations.md
+[named-spy]: docs/rules/named-spy.md
 [new-line-before-expect]: docs/rules/new-line-before-expect.md
+[new-line-between-declarations]: docs/rules/new-line-between-declarations.md
+[no-assign-spyon]: docs/rules/no-assign-spyon.md
+[no-describe-variables]: docs/rules/no-describe-variables.md
+[no-disabled-tests]: docs/rules/no-disabled-tests.md
+[no-expect-in-setup-teardown]: docs/rules/no-expect-in-setup-teardown.md
+[no-focused-tests]: docs/rules/no-focused-tests.md
+[no-global-setup]: docs/rules/no-global-setup.md
+[no-spec-dupes]: docs/rules/no-spec-dupes.md
+[no-suite-callback-args]: docs/rules/no-suite-callback-args.md
+[no-suite-dupes]: docs/rules/no-suite-dupes.md
+[no-unsafe-spy]: docs/rules/no-unsafe-spy.md
+[valid-expect]: docs/rules/valid-expect.md
 
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
