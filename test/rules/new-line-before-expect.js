@@ -43,6 +43,11 @@ eslintTester.run('new line before expect', rule, {
     linesToCode([
       '  notJasmineTestSuite()',
       '  expect(a)'
+    ]),
+    linesToCode([
+      'it("", specAsync(function() {',
+      '  expect(uut.somethingElse).toEqual("123");',
+      '}));'
     ])
   ],
   invalid: [
