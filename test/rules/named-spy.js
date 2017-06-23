@@ -19,7 +19,8 @@ eslintTester.run('named-spy', rule, {
     // Correct use of named spies
     'var onSuccess = jasmine.createSpy("onSuccess")',
     'onSuccess = jasmine.createSpy("onSuccess")',
-    'onSuccess(jasmine.createSpy("callback"))',
+    // Handles spy as noop
+    'foo(jasmine.createSpy("callback"))',
     linesToCode([
       'someObject = {',
       '  someFunc: jasmine.createSpy("someFunc")',
