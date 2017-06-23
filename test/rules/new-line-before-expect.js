@@ -41,9 +41,21 @@ eslintTester.run('new line before expect', rule, {
       '});'
     ]),
     linesToCode([
-      '  notJasmineTestSuite()',
-      '  expect(a)'
+      'notJasmineTestSuite()',
+      'expect(a)'
+    ]),
+    linesToCode([
+      'it("", helper(function() {',
+      '  expect(1).toEqual(1);',
+      '}));'
+    ]),
+    linesToCode([
+      'it("", helper(function() {',
+      ' ',
+      '  expect(1).toEqual(1);',
+      '}));'
     ])
+
   ],
   invalid: [
     {
@@ -54,6 +66,19 @@ eslintTester.run('new line before expect', rule, {
         '  expect(1).toBe(1)',
         ' });',
         '});'
+      ]),
+      errors: [
+        {
+          message: 'No new line before expect'
+        }
+      ]
+    },
+    {
+      code: linesToCode([
+        'it("", helper(function() {',
+        '  var a = 1',
+        '  expect(a).toEqual(1);',
+        '}));'
       ]),
       errors: [
         {
