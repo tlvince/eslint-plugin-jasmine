@@ -81,6 +81,7 @@ Rule                              | Recommended      | Options
 [no-suite-dupes][]                | 1, `'block'`     | `['block', 'branch']`
 [no-unsafe-spy][]                 | 1                |
 [valid-expect][]                  | 1                |
+[prefer-jasmine-matcher][]        | 1                |
 
 
 For example, using the recommended configuration, the `no-focused-tests` rule
@@ -119,6 +120,7 @@ See [configuring rules][] for more information.
 [no-suite-dupes]: docs/rules/no-suite-dupes.md
 [no-unsafe-spy]: docs/rules/no-unsafe-spy.md
 [valid-expect]: docs/rules/valid-expect.md
+[prefer-jasmine-matcher]: docs/rules/prefer-jasmine-matcher.md
 
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
