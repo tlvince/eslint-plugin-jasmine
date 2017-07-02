@@ -71,7 +71,15 @@ eslintTester.run('new line before expect', rule, {
         {
           message: 'No new line before expect'
         }
-      ]
+      ],
+      output: linesToCode([
+        'describe("", function() {',
+        ' it("", function(){',
+        '  var a = 1',
+        '  \nexpect(1).toBe(1)',
+        ' });',
+        '});'
+      ])
     },
     {
       code: linesToCode([
@@ -84,7 +92,13 @@ eslintTester.run('new line before expect', rule, {
         {
           message: 'No new line before expect'
         }
-      ]
+      ],
+      output: linesToCode([
+        'it("", helper(function() {',
+        '  var a = 1',
+        '  \nexpect(a).toEqual(1);',
+        '}));'
+      ])
     }
   ]
 })
