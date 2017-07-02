@@ -8,7 +8,7 @@ Standard jasmine matcher include : `toEqual`, `toBe`, `toBeLessThan`, `toBeGreat
 
 This rule triggers a **warning** (is set to **1** by default).
 
-The following pattern is considered a warning:
+The following patterns are considered a warning:
 
 
 ```js
