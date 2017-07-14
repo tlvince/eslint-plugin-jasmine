@@ -82,6 +82,7 @@ Rule                              | Recommended      | Options
 [no-unsafe-spy][]                 | 1                |
 [valid-expect][]                  | 1                |
 [prefer-jasmine-matcher][]        | 1                |
+[prefer-toHaveBeenCalledWith][]   | 0                |
 
 
 For example, using the recommended configuration, the `no-focused-tests` rule
@@ -121,6 +122,7 @@ See [configuring rules][] for more information.
 [no-unsafe-spy]: docs/rules/no-unsafe-spy.md
 [valid-expect]: docs/rules/valid-expect.md
 [prefer-jasmine-matcher]: docs/rules/prefer-jasmine-matcher.md
+[prefer-toHaveBeenCalledWith]: docs/rules/prefer-toHaveBeenCalledWith.md
 
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
