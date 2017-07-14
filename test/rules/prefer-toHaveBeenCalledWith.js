@@ -1,6 +1,6 @@
 'use strict'
 
-var rule = require('../../lib/rules/no-toHaveBeenCalled')
+var rule = require('../../lib/rules/prefer-toHaveBeenCalledWith')
 var linesToCode = require('../helpers/lines_to_code')
 var RuleTester = require('eslint').RuleTester
 
