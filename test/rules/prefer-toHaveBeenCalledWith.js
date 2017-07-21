@@ -25,6 +25,13 @@ eslintTester.run('prefer toHaveBeenCalledWith', rule, {
       '  expect(f).not.toHaveBeenCalledWith(1)',
       ' });',
       '});'
+    ]),
+    linesToCode([
+      'describe("", function() {',
+      ' it("", function(){',
+      '  expect(f).not.toHaveBeenCalled()',
+      ' });',
+      '});'
     ])
   ],
   invalid: [
@@ -43,22 +50,6 @@ eslintTester.run('prefer toHaveBeenCalledWith', rule, {
           message: 'Prefer toHaveBeenCalledWith'
         }
       ]
-    },
-    {
-      code: linesToCode([
-        'describe("", function() {',
-        ' it("", function(){',
-        '',
-        '  expect(f).not.toHaveBeenCalled()',
-        ' });',
-        '});'
-      ]),
-      errors: [
-        {
-          message: 'Prefer toHaveBeenCalledWith'
-        }
-      ]
     }
-
   ]
 })

@@ -1,26 +1,20 @@
 # Prefer toHaveBeenCalledWith
 
 This rule recommends using `toHaveBeenCalledWith` instead of `toHaveBeenCalled`.
+Except for the usage with a negative matcher.
+`not.toHaveBeenCalled()` is a **valid** syntax according to the rule.
+
 ## Rule details
 
-This rule is turned off by default (is set to **0**).
+This rule triggers a **warning** (is set to **1** by default).
 
-The following patterns are considered a warning:
-
+The following pattern is a warning:
 
 ```js
 describe("", function() {
   it("", function() {
     f(1);
     expect(f).toHaveBeenCalled();
-  });
-});
-```
-
-```js
-describe("", function() {
-  it("", function() {
-    expect(f).not.toHaveBeenCalled();
   });
 });
 ```
@@ -39,7 +33,16 @@ describe("", function() {
 ```js
 describe("", function() {
   it("", function() {
-    expect(f).not.toHaveBeenCalled(2);
+    f(1);
+    expect(f).not.toHaveBeenCalledWith(2);
+  });
+});
+```
+
+```js
+describe("", function() {
+  it("", function() {
+    expect(f).not.toHaveBeenCalled();
   });
 });
 ```
