@@ -39,7 +39,7 @@ module.exports = {
         'jasmine/new-line-between-declarations': 1,
         'jasmine/new-line-before-expect': 1,
         'jasmine/prefer-jasmine-matcher': 1,
-        'jasmine/prefer-toHaveBeenCalledWith': 0
+        'jasmine/prefer-toHaveBeenCalledWith': 1
       }
     }
   }

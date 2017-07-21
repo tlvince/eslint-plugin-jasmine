@@ -82,7 +82,7 @@ Rule                              | Recommended      | Options
 [no-unsafe-spy][]                 | 1                |
 [valid-expect][]                  | 1                |
 [prefer-jasmine-matcher][]        | 1                |
-[prefer-toHaveBeenCalledWith][]   | 0                |
+[prefer-toHaveBeenCalledWith][]   | 1                |
 
 
 For example, using the recommended configuration, the `no-focused-tests` rule
