@@ -21,6 +21,15 @@ eslintTester.run('prefer toHaveBeenCalledWith', rule, {
       'describe("", function() {',
       ' it("", function(){',
       '',
+      ' f();',
+      '  expect(f).toHaveBeenCalledWith()',
+      ' });',
+      '});'
+    ]),
+    linesToCode([
+      'describe("", function() {',
+      ' it("", function(){',
+      '',
       ' f(2);',
       '  expect(f).not.toHaveBeenCalledWith(1)',
       ' });',

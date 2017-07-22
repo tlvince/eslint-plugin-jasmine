@@ -33,6 +33,15 @@ describe("", function() {
 ```js
 describe("", function() {
   it("", function() {
+    f();
+    expect(f).toHaveBeenCalledWith();
+  });
+});
+```
+
+```js
+describe("", function() {
+  it("", function() {
     f(1);
     expect(f).not.toHaveBeenCalledWith(2);
   });
