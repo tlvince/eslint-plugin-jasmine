@@ -38,6 +38,14 @@ eslintTester.run('prefer jasmine matcher', rule, {
       '  expect(a instanceof String).toBe(true)',
       ' });',
       '});'
+    ]),
+    // issue #136
+    linesToCode([
+      'describe("", function() {',
+      ' it("", function(){',
+      '  expect()',
+      ' });',
+      '});'
     ])
   ],
   invalid: [
