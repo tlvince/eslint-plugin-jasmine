@@ -9,18 +9,24 @@ eslintTester.run('no-global-setup', rule, {
   valid: [{
     code: 'describe("", function() { beforeEach(function() {}) })'
   }, {
-    code: 'beforeEach(function() {})',
-    filename: 'tests/helpers/mocks/mockBeforeEachHelper.js'
+    code: 'beforeEach(function() {})'
+  }, {
+    code: 'beforeEach(function() {}); afterEach(function() {})'
   }],
   invalid: [{
-    code: 'beforeEach(function() {})',
+    code: 'beforeEach(function() {}); describe(function() {})',
     errors: [{
-      message: 'Do not use `beforeEach` outside a `describe`.'
+      message: 'Do not use `beforeEach` outside a `describe` except for in global helpers.'
     }]
   }, {
-    code: 'afterEach(function() {})',
+    code: 'afterEach(function() {}); describe(function() {})',
     errors: [{
-      message: 'Do not use `afterEach` outside a `describe`.'
+      message: 'Do not use `afterEach` outside a `describe` except for in global helpers.'
+    }]
+  }, {
+    code: 'beforeEach(function() {}); describe(function() {}); afterEach(function() {})',
+    errors: [{
+      message: 'Do not use `beforeEach, afterEach` outside a `describe` except for in global helpers.'
     }]
   }]
 })
