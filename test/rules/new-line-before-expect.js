@@ -41,6 +41,14 @@ eslintTester.run('new line before expect', rule, {
       '});'
     ]),
     linesToCode([
+      'it("", helper(function() {',
+      '  var a = 1',
+      '',
+      '  expect(a).toBe(1);',
+      '  expect(a).not.toBe(0);',
+      '}));'
+    ]),
+    linesToCode([
       'notJasmineTestSuite()',
       'expect(a)'
     ]),
