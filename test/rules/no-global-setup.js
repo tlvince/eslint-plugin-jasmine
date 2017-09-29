@@ -2,8 +2,10 @@
 
 var rule = require('../../lib/rules/no-global-setup')
 var RuleTester = require('eslint').RuleTester
-
-var eslintTester = new RuleTester()
+const parserOptions = {
+  ecmaVersion: 8
+}
+var eslintTester = new RuleTester({parserOptions})
 
 eslintTester.run('no-global-setup', rule, {
   valid: [{
@@ -11,7 +13,13 @@ eslintTester.run('no-global-setup', rule, {
   }, {
     code: 'beforeEach(function() {})'
   }, {
-    code: 'beforeEach(function() {}); afterEach(function() {})'
+    code: `describe.only("suite", () => {
+        beforeAll (() => { var a = 1; });
+      });`
+  }, {
+    code: `describe['only']("suite", () => {
+        beforeAll (() => { var a = 1; });
+      });`
   }],
   invalid: [{
     code: 'beforeEach(function() {}); describe(function() {})',
