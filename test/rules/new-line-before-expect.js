@@ -49,6 +49,13 @@ eslintTester.run('new line before expect', rule, {
       '}));'
     ]),
     linesToCode([
+      'it("", helper(function() {',
+      '  var a = 1',
+      '',
+      '  expect(a).toBe(1); expect(a).not.toBe(0);',
+      '}));'
+    ]),
+    linesToCode([
       'notJasmineTestSuite()',
       'expect(a)'
     ]),
@@ -84,7 +91,8 @@ eslintTester.run('new line before expect', rule, {
         'describe("", function() {',
         ' it("", function(){',
         '  var a = 1',
-        '  \nexpect(1).toBe(1)',
+        '',
+        '  expect(1).toBe(1)',
         ' });',
         '});'
       ])
@@ -104,8 +112,77 @@ eslintTester.run('new line before expect', rule, {
       output: linesToCode([
         'it("", helper(function() {',
         '  var a = 1',
-        '  \nexpect(a).toEqual(1);',
+        '',
+        '  expect(a).toEqual(1);',
         '}));'
+      ])
+    },
+    {
+      code: linesToCode([
+        'it("", helper(function() {',
+        '  var a = 1',
+        '  var b = 2',
+        '  expect(a).toEqual(1); expect(b).toEqual(2);',
+        '}));'
+      ]),
+      errors: [
+        {
+          message: 'No new line before expect'
+        }
+      ],
+      output: linesToCode([
+        'it("", helper(function() {',
+        '  var a = 1',
+        '  var b = 2',
+        '',
+        '  expect(a).toEqual(1); expect(b).toEqual(2);',
+        '}));'
+      ])
+    },
+    {
+      code: linesToCode([
+        'describe("", function() {',
+        ' it("", function(){',
+        '  var a = 1; expect(a).toBe(1)',
+        ' });',
+        '});'
+      ]),
+      errors: [
+        {
+          message: 'No new line before expect'
+        }
+      ],
+      output: linesToCode([
+        'describe("", function() {',
+        ' it("", function(){',
+        '  var a = 1;',
+        '',
+        '  expect(a).toBe(1)',
+        ' });',
+        '});'
+      ])
+    },
+    {
+      code: linesToCode([
+        'describe("", function() {',
+        ' it("", function(){',
+        '  var a = 1; expect(a).toBe(1); expect(a).not.toBe(0);',
+        ' });',
+        '});'
+      ]),
+      errors: [
+        {
+          message: 'No new line before expect'
+        }
+      ],
+      output: linesToCode([
+        'describe("", function() {',
+        ' it("", function(){',
+        '  var a = 1;',
+        '',
+        '  expect(a).toBe(1); expect(a).not.toBe(0);',
+        ' });',
+        '});'
       ])
     }
   ]
