@@ -107,6 +107,7 @@ rules:
 ```
 
 See [configuring rules][] for more information.
+
 [expect-matcher]: docs/rules/expect-matcher.md
 [expect-single-argument]: docs/rules/expect-single-argument.md
 [missing-expect]: docs/rules/missing-expect.md
