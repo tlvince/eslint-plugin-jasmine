@@ -1,3 +1,4 @@
+// DEPRECATED use expect-matcher and expect-single-argument rules instead
 'use strict'
 
 var rule = require('../../lib/rules/valid-expect')
