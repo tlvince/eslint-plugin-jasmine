@@ -2,6 +2,8 @@
 
 module.exports = {
   rules: {
+    'expect-matcher': require('./lib/rules/expect-matcher'),
+    'expect-single-argument': require('./lib/rules/expect-single-argument'),
     'named-spy': require('./lib/rules/named-spy'),
     'no-focused-tests': require('./lib/rules/no-focused-tests'),
     'no-disabled-tests': require('./lib/rules/no-disabled-tests'),
@@ -23,6 +25,8 @@ module.exports = {
   configs: {
     recommended: {
       rules: {
+        'jasmine/expect-matcher': 1,
+        'jasmine/expect-single-argument': 1,
         'jasmine/named-spy': 0,
         'jasmine/no-focused-tests': 2,
         'jasmine/no-disabled-tests': 1,
@@ -31,7 +35,6 @@ module.exports = {
         'jasmine/no-spec-dupes': 1,
         'jasmine/missing-expect': 0,
         'jasmine/no-suite-callback-args': 2,
-        'jasmine/valid-expect': 1,
         'jasmine/no-assign-spyon': 0,
         'jasmine/no-unsafe-spy': 1,
         'jasmine/no-global-setup': 2,

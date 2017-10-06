@@ -66,6 +66,8 @@ configuration files.
 
 Rule                              | Recommended      | Options
 ----                              | -----------      | -------
+[expect-matcher][]                | 1,               |
+[expect-single-argument][]        | 1,               |
 [missing-expect][]                | 0, `'expect()'`  | expectation function names
 [named-spy][]                     | 0                |
 [new-line-before-expect][]        | 1                |
@@ -80,7 +82,7 @@ Rule                              | Recommended      | Options
 [no-suite-callback-args][]        | 2                |
 [no-suite-dupes][]                | 1, `'block'`     | `['block', 'branch']`
 [no-unsafe-spy][]                 | 1                |
-[valid-expect][]                  | 1                |
+[valid-expect][]                  | `deprecated`     |
 [prefer-jasmine-matcher][]        | 1                |
 [prefer-toHaveBeenCalledWith][]   | 1                |
 
@@ -105,7 +107,8 @@ rules:
 ```
 
 See [configuring rules][] for more information.
-
+[expect-matcher]: docs/rules/expect-matcher.md
+[expect-single-argument]: docs/rules/expect-single-argument.md
 [missing-expect]: docs/rules/missing-expect.md
 [named-spy]: docs/rules/named-spy.md
 [new-line-before-expect]: docs/rules/new-line-before-expect.md
