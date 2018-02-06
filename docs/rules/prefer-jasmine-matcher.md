@@ -1,4 +1,4 @@
-# Enforce jasmine matchers are used instead of comparison within expect
+# Enforce jasmine matchers are used instead of comparison within expect (prefer-jasmine-matcher).
 
 This rule enforces that within `expect` jasmine matchers are used instead of comparison operators such as
 `===`, `==`, `!==`, `!=`, `>`, `<`, `>=`, `<=`.

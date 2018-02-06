@@ -1,4 +1,4 @@
-# Enforce spies to be defined in before/after/it blocks
+# Enforce spies to be defined in before/after/it blocks (no-unsafe-spy).
 
 Make sure named spies are declared only in before/after/it jasmine blocks.
 Spies created in global scope or directly in define blocks don't
