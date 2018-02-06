@@ -1,4 +1,4 @@
-# Disallow using setup and teardown methods outside a suite
+# Disallow using setup and teardown methods outside a suite (no-global-setup).
 
 Make sure that all uses of the global `beforeEach`, `afterEach`, `beforeAll`, and `afterAll` methods are within a suite.
 

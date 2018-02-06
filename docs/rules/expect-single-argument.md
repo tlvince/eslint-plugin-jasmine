@@ -1,4 +1,4 @@
-# Enforce expect having a single argument.
+# Enforce expect having a single argument (expect-single-argument).
 
 Ensure `expect` is called with a single argument.
 
