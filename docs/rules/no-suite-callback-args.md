@@ -1,4 +1,4 @@
-# Enforce that a suites's callback does not contain any arguments
+# Enforce that a suites's callback does not contain any arguments (no-suite-callback-args).
 
 Jasmine's specs takes an argument, normally called `done`, to enable
 asynchronous testing. However, a suite is only a name or title, and contains
