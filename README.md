@@ -74,6 +74,7 @@ Rule                              | Recommended      | Options
 [new-line-between-declarations][] | 1                |
 [no-assign-spyon][]               | 0                |
 [no-describe-variables][]         | 0                |
+[no-global-variables][]           | 0                |
 [no-disabled-tests][]             | 1                |
 [no-expect-in-setup-teardown][]   | 1, `'expect()'`  | expectation function names
 [no-focused-tests][]              | 2                |
@@ -116,6 +117,7 @@ See [configuring rules][] for more information.
 [new-line-between-declarations]: docs/rules/new-line-between-declarations.md
 [no-assign-spyon]: docs/rules/no-assign-spyon.md
 [no-describe-variables]: docs/rules/no-describe-variables.md
+[no-global-variables]: docs/rules/no-global-variables.md
 [no-disabled-tests]: docs/rules/no-disabled-tests.md
 [no-expect-in-setup-teardown]: docs/rules/no-expect-in-setup-teardown.md
 [no-focused-tests]: docs/rules/no-focused-tests.md
