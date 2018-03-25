@@ -78,6 +78,7 @@ Rule                              | Recommended      | Options
 [no-expect-in-setup-teardown][]   | 1, `'expect()'`  | expectation function names
 [no-focused-tests][]              | 2                |
 [no-global-setup][]               | 2                |
+[no-promise-without-done-fail][]  | 1                |
 [no-spec-dupes][]                 | 1, `'block'`     | `['block', 'branch']`
 [no-suite-callback-args][]        | 2                |
 [no-suite-dupes][]                | 1, `'block'`     | `['block', 'branch']`
@@ -120,6 +121,7 @@ See [configuring rules][] for more information.
 [no-expect-in-setup-teardown]: docs/rules/no-expect-in-setup-teardown.md
 [no-focused-tests]: docs/rules/no-focused-tests.md
 [no-global-setup]: docs/rules/no-global-setup.md
+[no-promise-without-done-fail]: docs/rules/no-promise-without-done-fail.md
 [no-spec-dupes]: docs/rules/no-spec-dupes.md
 [no-suite-callback-args]: docs/rules/no-suite-callback-args.md
 [no-suite-dupes]: docs/rules/no-suite-dupes.md
