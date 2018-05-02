@@ -2,7 +2,10 @@
 
 const rule = require('../../lib/rules/no-promise-without-done-fail')
 const RuleTester = require('eslint').RuleTester
-const ruleTester = new RuleTester()
+const parserOptions = {
+  ecmaVersion: 8
+}
+const ruleTester = new RuleTester({parserOptions})
 
 ruleTester.run('no-promise-without-done-fail', rule, {
   valid: [
@@ -20,6 +23,24 @@ ruleTester.run('no-promise-without-done-fail', rule, {
     },
     {
       code: 'it("should not care about the name of the first parameter", function (finished) { somethingAsync().then(finished, finished.fail);});'
+    },
+    {
+      code: 'it("", (done) => { somethingAsync.then((res) => { expect(res).toBe(true); done();}).catch(done.fail)})'
+    },
+    {
+      code: 'it("", (done) => { somethingAsync.then((res) => { expect(res).toBe(true); done(); }).then(f).then(g).then(h).catch(done.fail)})'
+    },
+    {
+      code: 'it("", () => { return somethingAsync.then((res) => { expect(res).toBe(true); }) })'
+    },
+    {
+      code: 'it("", (done) => { asyncFunc.then(done, done.fail);})'
+    },
+    {
+      code: 'it("should not care about the name of the first parameter", (finished) => { somethingAsync().then(finished, finished.fail);});'
+    },
+    {
+      code: 'it("should be fine to return promise", () => { return somethingAsync().then(f);});'
     }
   ],
   invalid: [
