@@ -28,6 +28,12 @@ The following patterns are not warnings:
 ```js
 describe('A suite', function(done) {
   it('A spec', function() {
+    asyncCall().then(onSuccess, done.fail);
+  });
+});
+
+describe('A suite', function(done) {
+  it('A spec', function() {
     asyncCall().then(function() {
       expect(true).toBe(true);
       done();
