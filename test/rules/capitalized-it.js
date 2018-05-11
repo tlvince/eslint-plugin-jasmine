@@ -40,7 +40,12 @@ eslintTester.run('capitalized-it', rule, {
     ],
     code: toCode([
       'it("this is invalid.", function() {});'
-    ])
+    ]),
+    errors: [
+      {
+        message: 'it is expected to start with an upper case letter'
+      }
+    ]
   },
   {
     options: [
@@ -48,6 +53,11 @@ eslintTester.run('capitalized-it', rule, {
     ],
     code: toCode([
       'it("This is invalid.", function() {});'
-    ])
+    ]),
+    errors: [
+      {
+        message: 'it is expected to start with a lower case letter'
+      }
+    ]
   }]
 })
