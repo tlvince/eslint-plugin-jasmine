@@ -5,14 +5,25 @@ var RuleTester = require('eslint').RuleTester
 
 var eslintTester = new RuleTester()
 
+/*
+ * Generate readble code lines block
+ * // description
+ * lines[0]
+ * lines[1]
+ * ...
+ * lines[n]
+ */
+function toCode (lines, description) {
+  return (description ? '// ' + description : '') + '\n' + lines.join('\n')
+}
+
 eslintTester.run('capitalized-it', rule, {
-  valid: [
-    {
+  valid: [{
       options: [
         'always'
       ],
       code: toCode([
-        'it("This is valid.", function() {});'        
+        'it("This is valid.", function() {});'
       ])
     },   
     {
