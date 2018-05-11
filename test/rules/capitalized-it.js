@@ -18,48 +18,27 @@ function toCode (lines, description) {
 }
 
 eslintTester.run('capitalized-it', rule, {
-  valid: [{
-    options: [
-      'always'
-    ],
-    code: toCode([
-      'it("This is valid.", function() {});'
-    ])
-  },
-  {
-    options: [
-      'never'
-    ],
-    code: toCode([
-      'it("this is valid.", function() {});'
-    ])
-  }],
-  invalid: [{
-    options: [
-      'always'
-    ],
-    code: toCode([
-      'it("this is invalid.", function() {});'
-    ]),
-    errors: [
-      {
-        message: 'it is expected to start with an upper case letter',
-        type: 'CallExpression'
-      }
-    ]
-  },
-  {
-    options: [
-      'never'
-    ],
-    code: toCode([
-      'it("This is invalid.", function() {});'
-    ]),
-    errors: [
-      {
-        message: 'it is expected to start with a lower case letter',
-        type: 'CallExpression'
-      }
-    ]
-  }]
+  valid: [
+    {
+        code: 'it("This is valid.", function() {});',
+        options: ['always']
+    },
+    {
+        code: 'it("this is valid.", function() {});',
+        options: ['never']
+    }
+  ],
+
+  invalid: [
+    {
+      code: 'it("this is invalid.", function() {});',
+      options: ['always'],
+      errors: [{ message: "it must start with an upper case letter." }]
+    },
+    {
+      code: 'it("This is invalid.", function() {});',
+      options: ['never'],
+      errors: [{ message: "it must start with a lower case letter." }]
+    }
+  ]
 })
