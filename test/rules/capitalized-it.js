@@ -8,12 +8,12 @@ var eslintTester = new RuleTester()
 eslintTester.run('capitalized-it', rule, {
   valid: [
     {
-        code: 'it("This is valid.", function() {});',
-        options: ['always']
+      code: 'it("This is valid.", function() {});',
+      options: ['always']
     },
     {
-        code: 'it("this is valid.", function() {});',
-        options: ['never']
+      code: 'it("this is valid.", function() {});',
+      options: ['never']
     }
   ],
 
