@@ -25,15 +25,15 @@ eslintTester.run('capitalized-it', rule, {
       code: toCode([
         'it("This is valid.", function() {});'
       ])
-    },   
+    },
     {
       options: [
         'never'
       ],
       code: toCode([
-        'it("this is valid.", function() {});'        
+        'it("this is valid.", function() {});'
       ])
-    },  
+    },
   ],
 
   invalid: [
@@ -42,17 +42,16 @@ eslintTester.run('capitalized-it', rule, {
         'always'
       ],
       code: toCode([
-        'it("this is invalid.", function() {});'        
+        'it("this is invalid.", function() {});'
       ])
-    },   
+    },
     {
       options: [
         'never'
       ],
       code: toCode([
-        'it("This is invalid.", function() {});'        
+        'it("This is invalid.", function() {});'
       ])
-    },  
+    },
   ]
 })
-
