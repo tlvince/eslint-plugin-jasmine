@@ -43,7 +43,8 @@ eslintTester.run('capitalized-it', rule, {
     ]),
     errors: [
       {
-        message: 'it is expected to start with an upper case letter'
+        message: 'it is expected to start with an upper case letter',
+        type: 'CallExpression'
       }
     ]
   },
@@ -56,7 +57,8 @@ eslintTester.run('capitalized-it', rule, {
     ]),
     errors: [
       {
-        message: 'it is expected to start with a lower case letter'
+        message: 'it is expected to start with a lower case letter',
+        type: 'CallExpression'
       }
     ]
   }]
