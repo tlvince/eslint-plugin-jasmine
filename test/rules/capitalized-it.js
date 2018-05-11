@@ -5,18 +5,6 @@ var RuleTester = require('eslint').RuleTester
 
 var eslintTester = new RuleTester()
 
-/*
- * Generate readble code lines block
- * // description
- * lines[0]
- * lines[1]
- * ...
- * lines[n]
- */
-function toCode (lines, description) {
-  return (description ? '// ' + description : '') + '\n' + lines.join('\n')
-}
-
 eslintTester.run('capitalized-it', rule, {
   valid: [
     {
@@ -33,12 +21,12 @@ eslintTester.run('capitalized-it', rule, {
     {
       code: 'it("this is invalid.", function() {});',
       options: ['always'],
-      errors: [{ message: "it must start with an upper case letter." }]
+      errors: [{ message: 'it must start with an upper case letter.' }]
     },
     {
       code: 'it("This is invalid.", function() {});',
       options: ['never'],
-      errors: [{ message: "it must start with a lower case letter." }]
+      errors: [{ message: 'it must start with a lower case letter.' }]
     }
   ]
 })
