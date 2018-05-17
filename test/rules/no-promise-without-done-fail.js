@@ -22,6 +22,9 @@ ruleTester.run('no-promise-without-done-fail', rule, {
       code: 'it("", function (done) { asyncFunc.then(done, done.fail);})'
     },
     {
+      code: 'it("", function (done) { asyncFunc.then(done.fail, done);})'
+    },
+    {
       code: 'it("should not care about the name of the first parameter", function (finished) { somethingAsync().then(finished, finished.fail);});'
     },
     {
@@ -37,6 +40,9 @@ ruleTester.run('no-promise-without-done-fail', rule, {
       code: 'it("", (done) => { asyncFunc.then(done, done.fail);})'
     },
     {
+      code: 'it("", (done) => { asyncFunc.then(done.fail, done);})'
+    },
+    {
       code: 'it("should not care about the name of the first parameter", (finished) => { somethingAsync().then(finished, finished.fail);});'
     },
     {
@@ -46,6 +52,12 @@ ruleTester.run('no-promise-without-done-fail', rule, {
   invalid: [
     {
       code: 'it("", function(done) { somethingAsync.then(function(res) { expect(res).toBe(true); done(); }) })',
+      errors: [{
+        message: 'An "it" that uses an async method should handle failure (use "done.fail")'
+      }]
+    },
+    {
+      code: 'it("", function(done) { somethingAsync.then(undefined, function(err) { expect(err).toBe(true); done(); }) })',
       errors: [{
         message: 'An "it" that uses an async method should handle failure (use "done.fail")'
       }]
