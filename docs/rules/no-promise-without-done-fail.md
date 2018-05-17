@@ -34,10 +34,25 @@ describe('A suite', function(done) {
 
 describe('A suite', function(done) {
   it('A spec', function() {
+    asyncCall().then(done.fail, onError);
+  });
+});
+
+describe('A suite', function(done) {
+  it('A spec', function() {
     asyncCall().then(function() {
       expect(true).toBe(true);
       done();
     }).catch(done.fail);
+  });
+});
+
+describe('A suite', function(done) {
+  it('A spec', function() {
+    asyncCall().then(done.fail).catch(function() {
+      expect(true).toBe(true);
+      done();
+    });
   });
 });
 ```
