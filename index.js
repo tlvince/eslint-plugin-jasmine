@@ -2,6 +2,7 @@
 
 module.exports = {
   rules: {
+    'capitalized-it': require('./lib/rules/capitalized-it'),
     'expect-matcher': require('./lib/rules/expect-matcher'),
     'expect-single-argument': require('./lib/rules/expect-single-argument'),
     'named-spy': require('./lib/rules/named-spy'),
