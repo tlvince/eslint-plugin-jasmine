@@ -75,7 +75,7 @@ Rule                              | Recommended      | Options
 [no-assign-spyon][]               | 0                |
 [no-describe-variables][]         | 0                |
 [no-disabled-tests][]             | 1                |
-[no-expect-in-setup-teardown][]   | 1, `'expect()'`  | expectation function names
+[no-expect-in-setup-teardown][]   | 1, `'expect()'`, `'expectAsync()'` | expectation function names
 [no-focused-tests][]              | 2                |
 [no-global-setup][]               | 2                |
 [no-promise-without-done-fail][]  | 1                |

@@ -12,11 +12,13 @@ eslintTester.run('no-expect-in-setup-teardown', rule, {
     'beforeAll(function() {});',
     'afterAll(function() {});',
     'it("", function() { expect(true).toBe(true); })',
+    'it("", function() { return expectAsync(Promise.resolve(true)).toBe(true); })',
     'beforeEach(function() { someOtherFunction(); });',
     'afterEach(function() { someOtherFunction(); });',
     'beforeAll(function() { someOtherFunction(); });',
     'afterAll(function() { someOtherFunction(); });',
     'expect(true).toBe(true);',
+    'expectAsync(Promise.resolve(true)).toBeResolvedTo(true);',
     {
       code: 'it("", function() {$httpBackend.expectGET();})',
       options: [
@@ -53,10 +55,26 @@ eslintTester.run('no-expect-in-setup-teardown', rule, {
       ]
     },
     {
+      code: 'beforeEach(function() { return expectAsync(Promise.resolve(true)).toBeResolvedTo(true); });',
+      errors: [
+        {
+          message: 'Unexpected "expectAsync()" call in "beforeEach()"'
+        }
+      ]
+    },
+    {
       code: 'afterEach(function() { expect(true).toBe(true); });',
       errors: [
         {
           message: 'Unexpected "expect()" call in "afterEach()"'
+        }
+      ]
+    },
+    {
+      code: 'afterEach(function() { return expectAsync(Promise.resolve(true)).toBeResolvedTo(true); });',
+      errors: [
+        {
+          message: 'Unexpected "expectAsync()" call in "afterEach()"'
         }
       ]
     },
@@ -69,10 +87,26 @@ eslintTester.run('no-expect-in-setup-teardown', rule, {
       ]
     },
     {
+      code: 'beforeAll(function() { return expectAsync(Promise.resolve(true)).toBeResolvedTo(true); });',
+      errors: [
+        {
+          message: 'Unexpected "expectAsync()" call in "beforeAll()"'
+        }
+      ]
+    },
+    {
       code: 'afterAll(function() { expect(true).toBe(true); });',
       errors: [
         {
           message: 'Unexpected "expect()" call in "afterAll()"'
+        }
+      ]
+    },
+    {
+      code: 'afterAll(function() { return expectAsync(Promise.resolve(true)).toBeResolvedTo(true); });',
+      errors: [
+        {
+          message: 'Unexpected "expectAsync()" call in "afterAll()"'
         }
       ]
     },
