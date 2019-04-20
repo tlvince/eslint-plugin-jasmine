@@ -5,7 +5,7 @@ If `expect` is the first statement inside a test then rule is not enforced.
 
 ## Rule details
 
-This rule triggers a **warning** (is set to **1** by default) whenever there is no new line or another except before expect.
+This rule triggers a **warning** (is set to **1** by default) whenever there is no new line or another expect before expect.
 
 The following pattern is considered a warning:
 
