@@ -86,6 +86,7 @@ Rule                              | Recommended                        | Options
 [valid-expect][]                  | `deprecated`                       |
 [prefer-jasmine-matcher][]        | 1                                  |
 [prefer-toHaveBeenCalledWith][]   | 1                                  |
+[prefer-toBeUndefined][]          | 0                                  | `['always', 'never']`
 
 
 For example, using the recommended configuration, the `no-focused-tests` rule
@@ -129,6 +130,7 @@ See [configuring rules][] for more information.
 [valid-expect]: docs/rules/valid-expect.md
 [prefer-jasmine-matcher]: docs/rules/prefer-jasmine-matcher.md
 [prefer-toHaveBeenCalledWith]: docs/rules/prefer-toHaveBeenCalledWith.md
+[prefer-toBeUndefined]: docs/rules/prefer-toBeUndefined.md
 
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
