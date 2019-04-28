@@ -44,7 +44,8 @@ module.exports = {
         'jasmine/new-line-between-declarations': 1,
         'jasmine/new-line-before-expect': 1,
         'jasmine/prefer-jasmine-matcher': 1,
-        'jasmine/prefer-toHaveBeenCalledWith': 1
+        'jasmine/prefer-toHaveBeenCalledWith': 1,
+        'jasmine/prefer-toBeUndefined': 0
       }
     }
   }
