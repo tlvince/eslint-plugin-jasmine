@@ -84,6 +84,7 @@ Rule                              | Recommended                        | Options
 [no-suite-dupes][]                | 1, `'block'`                       | `['block', 'branch']`
 [no-unsafe-spy][]                 | 1                                  |
 [valid-expect][]                  | `deprecated`                       |
+[prefer-capitalized-spec][]       | 1, `never`                         | `['always', 'never']`
 [prefer-jasmine-matcher][]        | 1                                  |
 [prefer-toHaveBeenCalledWith][]   | 1                                  |
 [prefer-toBeUndefined][]          | 0                                  | `['always', 'never']`
@@ -128,6 +129,7 @@ See [configuring rules][] for more information.
 [no-suite-dupes]: docs/rules/no-suite-dupes.md
 [no-unsafe-spy]: docs/rules/no-unsafe-spy.md
 [valid-expect]: docs/rules/valid-expect.md
+[prefer-capitalized-spec]: docs/rules/prefer-capitalized-spec.md
 [prefer-jasmine-matcher]: docs/rules/prefer-jasmine-matcher.md
 [prefer-toHaveBeenCalledWith]: docs/rules/prefer-toHaveBeenCalledWith.md
 [prefer-toBeUndefined]: docs/rules/prefer-toBeUndefined.md

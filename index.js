@@ -20,6 +20,7 @@ module.exports = {
     'no-expect-in-setup-teardown': require('./lib/rules/no-expect-in-setup-teardown'),
     'new-line-between-declarations': require('./lib/rules/new-line-between-declarations'),
     'new-line-before-expect': require('./lib/rules/new-line-before-expect'),
+    'prefer-capitalized-spec': require('./lib/rules/prefer-capitalized-spec'),
     'prefer-jasmine-matcher': require('./lib/rules/prefer-jasmine-matcher'),
     'prefer-toHaveBeenCalledWith': require('./lib/rules/prefer-toHaveBeenCalledWith')
   },
@@ -43,6 +44,7 @@ module.exports = {
         'jasmine/no-expect-in-setup-teardown': 1,
         'jasmine/new-line-between-declarations': 1,
         'jasmine/new-line-before-expect': 1,
+        'jasmine/prefer-capitalized-spec': 0,
         'jasmine/prefer-jasmine-matcher': 1,
         'jasmine/prefer-toHaveBeenCalledWith': 1,
         'jasmine/prefer-toBeUndefined': 0
