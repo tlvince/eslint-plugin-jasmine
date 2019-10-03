@@ -41,25 +41,25 @@ eslintTester.run('named-spy', rule, {
     {
       code: 'var spy = jasmine.createSpy()',
       errors: [
-        {message: 'Unnamed spy'}
+        { message: 'Unnamed spy' }
       ]
     },
     {
       code: 'spy = jasmine.createSpy()',
       errors: [
-        {message: 'Unnamed spy'}
+        { message: 'Unnamed spy' }
       ]
     },
     {
       code: 'var spy = jasmine.createSpy("callback")',
       errors: [
-        {message: 'Variable should be named after the spy name'}
+        { message: 'Variable should be named after the spy name' }
       ]
     },
     {
       code: 'spy = jasmine.createSpy("callback")',
       errors: [
-        {message: 'Variable should be named after the spy name'}
+        { message: 'Variable should be named after the spy name' }
       ]
     },
     {
@@ -69,7 +69,7 @@ eslintTester.run('named-spy', rule, {
         '};'
       ]),
       errors: [
-        {message: 'Variable should be named after the spy name'}
+        { message: 'Variable should be named after the spy name' }
       ]
     },
     {
@@ -79,7 +79,7 @@ eslintTester.run('named-spy', rule, {
         '};'
       ]),
       errors: [
-        {message: 'Variable should be named after the spy name'}
+        { message: 'Variable should be named after the spy name' }
       ]
     },
     {
@@ -89,7 +89,7 @@ eslintTester.run('named-spy', rule, {
         '};'
       ]),
       errors: [
-        {message: 'Variable should be named after the spy name'}
+        { message: 'Variable should be named after the spy name' }
       ]
     }
   ]

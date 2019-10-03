@@ -8,7 +8,7 @@ const parserOptions = {
   ecmaVersion: 8
 }
 
-var eslintTester = new RuleTester({parserOptions})
+var eslintTester = new RuleTester({ parserOptions })
 
 eslintTester.run('describe-with-done', rule, {
   valid: [

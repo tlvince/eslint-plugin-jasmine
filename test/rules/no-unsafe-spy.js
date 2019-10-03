@@ -56,13 +56,13 @@ eslintTester.run('no-unsafe-spy', rule, {
     {
       code: 'var mySharedSpy = jasmine.createSpy()',
       errors: [
-        {message: 'Spy declared outside of before/after/it block'}
+        { message: 'Spy declared outside of before/after/it block' }
       ]
     },
     {
       code: 'spyOn(someObj, "someMethod")',
       errors: [
-        {message: 'Spy declared outside of before/after/it block'}
+        { message: 'Spy declared outside of before/after/it block' }
       ]
     },
     {
@@ -72,7 +72,7 @@ eslintTester.run('no-unsafe-spy', rule, {
         '})'
       ]),
       errors: [
-        {message: 'Spy declared outside of before/after/it block'}
+        { message: 'Spy declared outside of before/after/it block' }
       ]
     },
     {
@@ -82,7 +82,7 @@ eslintTester.run('no-unsafe-spy', rule, {
         '})'
       ]),
       errors: [
-        {message: 'Spy declared outside of before/after/it block'}
+        { message: 'Spy declared outside of before/after/it block' }
       ]
     },
     {
@@ -95,7 +95,7 @@ eslintTester.run('no-unsafe-spy', rule, {
         '})'
       ]),
       errors: [
-        {message: 'Spy declared outside of before/after/it block'}
+        { message: 'Spy declared outside of before/after/it block' }
       ]
     }
   ]
