@@ -5,7 +5,7 @@ const RuleTester = require('eslint').RuleTester
 const parserOptions = {
   ecmaVersion: 8
 }
-const ruleTester = new RuleTester({parserOptions})
+const ruleTester = new RuleTester({ parserOptions })
 
 ruleTester.run('no-promise-without-done-fail', rule, {
   valid: [
