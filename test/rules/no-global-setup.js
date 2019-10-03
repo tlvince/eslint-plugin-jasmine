@@ -5,7 +5,7 @@ var RuleTester = require('eslint').RuleTester
 const parserOptions = {
   ecmaVersion: 8
 }
-var eslintTester = new RuleTester({parserOptions})
+var eslintTester = new RuleTester({ parserOptions })
 
 eslintTester.run('no-global-setup', rule, {
   valid: [{
