@@ -8,7 +8,12 @@ notifications:
 node_js:
   - 8
   - 10
-before_script:
-  - npm prune
-after_success:
-  - npm run semantic-release
+jobs:
+  include:
+    - stage: release
+      node_js: lts/*
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
