@@ -8,7 +8,7 @@ var eslintTester = new RuleTester()
 eslintTester.run('no-pending-tests', rule, {
   valid: [
     'describe("", function() { it("", function() {} ) })',
-    'it("", function() {})',
+    'it("", function() {})'
   ],
 
   invalid: [
