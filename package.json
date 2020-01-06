@@ -42,7 +42,7 @@
   "devDependencies": {
     "eslint": "^6.7.0",
     "ghooks": "^2.0.4",
-    "mocha": "^6.2.2",
+    "mocha": "^7.0.0",
     "standard": "^14.3.1",
     "validate-commit-msg": "^2.14.0",
     "semantic-release": "^15.13.31"
