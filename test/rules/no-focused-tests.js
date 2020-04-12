@@ -48,6 +48,20 @@ eslintTester.run('no-focused-tests', rule, {
           type: 'CallExpression'
         }
       ]
+    },
+    {
+      code: 'fit("My focused spec", function() {\n\n});',
+      errors: [
+        {
+          message: 'Unexpected fit.',
+          type: 'CallExpression',
+          line: 1,
+          column: 1,
+          // only report the word 'fit', not the whole test:
+          endLine: 1,
+          endColumn: 4
+        }
+      ]
     }
   ]
 })
