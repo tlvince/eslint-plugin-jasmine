@@ -45,7 +45,7 @@
     "mocha": "^7.1.1",
     "standard": "^14.3.3",
     "validate-commit-msg": "^2.14.0",
-    "semantic-release": "^15.13.31"
+    "semantic-release": "^17.0.4"
   },
   "config": {
     "ghooks": {
