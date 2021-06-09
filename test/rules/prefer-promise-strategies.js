@@ -33,6 +33,13 @@ eslintTester.run('prefer-promise-strategies', rule, {
       errors: [
         { message: 'Prefer rejectWith' }
       ]
+    },
+    { // Handles empty argument list
+      code: 'spy.and.returnValue(Promise.resolve());',
+      output: 'spy.and.resolveTo();',
+      errors: [
+        { message: 'Prefer resolveTo' }
+      ]
     }
   ]
 })
