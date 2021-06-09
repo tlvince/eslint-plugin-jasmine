@@ -16,7 +16,7 @@ eslintTester.run('prefer-promise-strategies', rule, {
     { code: 'spy.and.returnValue(fn => fn(Promise.resolve(123)));' },
     {
       // Should be invalid but would need more complex analysis
-      code: 'const s = spy.and; s.returnValue(Promise.reject(123));'
+      code: 'const s = spy.and; s.returnValue(Promise.resolve(123));'
     }
   ],
   invalid: [

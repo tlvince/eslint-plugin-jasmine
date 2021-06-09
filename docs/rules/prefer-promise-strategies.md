@@ -23,3 +23,12 @@ const spy = jasmine.createSpy();
 spy.withArgs(0).resolveTo(123);
 spy.and.rejectWith(123);
 ```
+
+## Limitations
+
+To avoid false positives, this rule only considers `returnValue` calls that match the pattern `X.{and,withArgs(Y)}.returnValue(Z)`. Thus, the following *incorrect* code is *not* recognized:
+
+```js
+const strategy = jasmine.createSpy().and;
+strategy.returnValue(Promise.resolve(123));
+```
