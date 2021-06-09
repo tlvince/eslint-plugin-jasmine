@@ -40,6 +40,13 @@ eslintTester.run('prefer-promise-strategies', rule, {
       errors: [
         { message: 'Prefer resolveTo' }
       ]
+    },
+    { // Handles multiple arguments (even if invalid)
+      code: 'spy.and.returnValue(Promise.resolve(1,2, 3));',
+      output: 'spy.and.resolveTo(1,2, 3);',
+      errors: [
+        { message: 'Prefer resolveTo' }
+      ]
     }
   ]
 })
