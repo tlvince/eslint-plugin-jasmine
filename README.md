@@ -86,6 +86,7 @@ Rule                              | Recommended                        | Options
 [no-unsafe-spy][]                 | 1                                  |
 [valid-expect][]                  | `deprecated`                       |
 [prefer-jasmine-matcher][]        | 1                                  |
+[prefer-promise-strategies][]     | 1                                  |
 [prefer-toHaveBeenCalledWith][]   | 1                                  |
 [prefer-toBeUndefined][]          | 0                                  | `['always', 'never']`
 
@@ -131,6 +132,7 @@ See [configuring rules][] for more information.
 [no-unsafe-spy]: docs/rules/no-unsafe-spy.md
 [valid-expect]: docs/rules/valid-expect.md
 [prefer-jasmine-matcher]: docs/rules/prefer-jasmine-matcher.md
+[prefer-promise-strategies]: docs/rules/prefer-promise-strategies.md
 [prefer-toHaveBeenCalledWith]: docs/rules/prefer-toHaveBeenCalledWith.md
 [prefer-toBeUndefined]: docs/rules/prefer-toBeUndefined.md
 

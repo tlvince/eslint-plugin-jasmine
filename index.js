@@ -22,6 +22,7 @@ module.exports = {
     'new-line-between-declarations': require('./lib/rules/new-line-between-declarations'),
     'new-line-before-expect': require('./lib/rules/new-line-before-expect'),
     'prefer-jasmine-matcher': require('./lib/rules/prefer-jasmine-matcher'),
+    'prefer-promise-strategies': require('./lib/rules/prefer-promise-strategies'),
     'prefer-toHaveBeenCalledWith': require('./lib/rules/prefer-toHaveBeenCalledWith'),
     'prefer-toBeUndefined': require('./lib/rules/prefer-toBeUndefined')
   },
@@ -47,6 +48,7 @@ module.exports = {
         'jasmine/new-line-between-declarations': 1,
         'jasmine/new-line-before-expect': 1,
         'jasmine/prefer-jasmine-matcher': 1,
+        'jasmine/prefer-promise-strategies': 1,
         'jasmine/prefer-toHaveBeenCalledWith': 1,
         'jasmine/prefer-toBeUndefined': 0
       }
