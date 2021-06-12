@@ -51,6 +51,26 @@ describe("", function() {
 
 ```js
 describe("", function() {
+  it("", async function() {
+    var a = 1;
+
+    await expect(a).toBe(1);
+  });
+});
+```
+
+```js
+describe("", function() {
+  it("", function() {
+    var a = 1;
+
+    return expect(a).toBe(1);
+  });
+});
+```
+
+```js
+describe("", function() {
   it("", function() {
     var a = 1;
 
