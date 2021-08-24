@@ -3,8 +3,10 @@
 var rule = require('../../lib/rules/new-line-before-expect')
 var linesToCode = require('../helpers/lines_to_code')
 var RuleTester = require('eslint').RuleTester
-
-var eslintTester = new RuleTester()
+const parserOptions = {
+  ecmaVersion: 8
+}
+var eslintTester = new RuleTester({ parserOptions })
 
 eslintTester.run('new line before expect', rule, {
   valid: [
@@ -41,6 +43,15 @@ eslintTester.run('new line before expect', rule, {
       '});'
     ]),
     linesToCode([
+      'describe("", function() {',
+      ' it("", async function(){',
+      '  var a = 1',
+      '',
+      '  await expect(a).toBe(1)',
+      ' });',
+      '});'
+    ]),
+    linesToCode([
       'it("", helper(function() {',
       '  var a = 1',
       '',
@@ -69,6 +80,11 @@ eslintTester.run('new line before expect', rule, {
       ' ',
       '  expect(1).toEqual(1);',
       '}));'
+    ]),
+    linesToCode([
+      'it("", function() {',
+      '  return expect(1).toEqual(1);',
+      '});'
     ])
 
   ],
@@ -114,6 +130,46 @@ eslintTester.run('new line before expect', rule, {
         '  var a = 1',
         '',
         '  expect(a).toEqual(1);',
+        '}));'
+      ])
+    },
+    {
+      code: linesToCode([
+        'it("", helper(async function() {',
+        '  var a = 1',
+        '  await expect(a).toEqual(1);',
+        '}));'
+      ]),
+      errors: [
+        {
+          message: 'No new line before expect'
+        }
+      ],
+      output: linesToCode([
+        'it("", helper(async function() {',
+        '  var a = 1',
+        '',
+        '  await expect(a).toEqual(1);',
+        '}));'
+      ])
+    },
+    {
+      code: linesToCode([
+        'it("", helper(function() {',
+        '  var a = 1',
+        '  return expect(a).toEqual(1);',
+        '}));'
+      ]),
+      errors: [
+        {
+          message: 'No new line before expect'
+        }
+      ],
+      output: linesToCode([
+        'it("", helper(function() {',
+        '  var a = 1',
+        '',
+        '  return expect(a).toEqual(1);',
         '}));'
       ])
     },
