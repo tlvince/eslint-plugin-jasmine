@@ -36,6 +36,18 @@ eslintTester.run('missing-expect', rule, {
       options: [
         'a.deeply.nested().expect.expression()'
       ]
+    },
+    {
+      code: 'it("", function() {sinon.verify()})',
+      options: [
+        '.verify()'
+      ]
+    },
+    {
+      code: 'it("", function() {some.object.with.expectation.at.the.end()})',
+      options: [
+        'some.object'
+      ]
     }
   ],
 
@@ -82,6 +94,22 @@ eslintTester.run('missing-expect', rule, {
     },
     {
       code: 'it("", function() {var foo = bar();})',
+      errors: [
+        {
+          message: 'Test has no expectations'
+        }
+      ]
+    },
+    {
+      code: 'it("", function() {var expectedResult = ""})',
+      errors: [
+        {
+          message: 'Test has no expectations'
+        }
+      ]
+    },
+    {
+      code: 'it("", function() {functionwithexpect()})',
       errors: [
         {
           message: 'Test has no expectations'

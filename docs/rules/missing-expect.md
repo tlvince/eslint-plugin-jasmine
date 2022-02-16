@@ -7,7 +7,7 @@ A test which doesn't make any expectations doesn't really test anything.
 This rule triggers a warning if no expectations are made. This rule is disabled
 by default.
 
-An array of expect function names may be passed to the configuration of this
+An array of expect function names or regexes may be passed to the configuration of this
 rule. By default only `expect` is used.
 
 ### Default configuration

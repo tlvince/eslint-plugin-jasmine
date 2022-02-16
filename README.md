@@ -68,7 +68,7 @@ Rule                              | Recommended                        | Options
 ----                              | -----------                        | -------
 [expect-matcher][]                | 1,                                 |
 [expect-single-argument][]        | 1,                                 |
-[missing-expect][]                | 0, `'expect()'`, `'expectAsync()'` | expectation function names
+[missing-expect][]                | 0, `'expect()'`, `'expectAsync()'` | expectation function names or regex
 [named-spy][]                     | 0                                  |
 [new-line-before-expect][]        | 1                                  |
 [new-line-between-declarations][] | 1                                  |
