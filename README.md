@@ -140,7 +140,7 @@ See [configuring rules][] for more information.
 
 ## Author
 
-© 2016 - 2017 Tom Vincent <git@tlvince.com> and [contributors][].
+© 2016 - 2022 Tom Vincent <git@tlvince.com> and [contributors][].
 
 [contributors]: https://github.com/tlvince/eslint-plugin-jasmine/graphs/contributors
 
