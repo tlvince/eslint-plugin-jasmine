@@ -89,6 +89,9 @@ Rule                              | Recommended                        | Options
 [prefer-promise-strategies][]     | 1                                  |
 [prefer-toHaveBeenCalledWith][]   | 1                                  |
 [prefer-toBeUndefined][]          | 0                                  | `['always', 'never']`
+[prefer-toBeNull][]               | 0                                  | `['always', 'never']`
+[prefer-toBeTrue][]               | 0                                  | `['always', 'never']`
+[prefer-toBeFalse][]              | 0                                  | `['always', 'never']`
 
 
 For example, using the recommended configuration, the `no-focused-tests` rule
@@ -135,6 +138,9 @@ See [configuring rules][] for more information.
 [prefer-promise-strategies]: docs/rules/prefer-promise-strategies.md
 [prefer-toHaveBeenCalledWith]: docs/rules/prefer-toHaveBeenCalledWith.md
 [prefer-toBeUndefined]: docs/rules/prefer-toBeUndefined.md
+[prefer-toBeNull]: docs/rules/prefer-toBeNull.md
+[prefer-toBeTrue]: docs/rules/prefer-toBeTrue.md
+[prefer-toBeFalse]: docs/rules/prefer-toBeFalse.md
 
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
