@@ -24,7 +24,10 @@ module.exports = {
     'prefer-jasmine-matcher': require('./lib/rules/prefer-jasmine-matcher'),
     'prefer-promise-strategies': require('./lib/rules/prefer-promise-strategies'),
     'prefer-toHaveBeenCalledWith': require('./lib/rules/prefer-toHaveBeenCalledWith'),
-    'prefer-toBeUndefined': require('./lib/rules/prefer-toBeUndefined')
+    'prefer-toBeUndefined': require('./lib/rules/prefer-toBeUndefined'),
+    'prefer-toBeNull': require('./lib/rules/prefer-toBeNull'),
+    'prefer-toBeTrue': require('./lib/rules/prefer-toBeTrue'),
+    'prefer-toBeFalse': require('./lib/rules/prefer-toBeFalse')
   },
   configs: {
     recommended: {
