@@ -32,6 +32,11 @@ eslintTester.run('named-spy', rule, {
       '};'
     ]),
     linesToCode([
+      'someObject = {',
+      '  "some:func": jasmine.createSpy("some:func")',
+      '};'
+    ]),
+    linesToCode([
       'function someFunc() {',
       '  this.spy = jasmine.createSpy("spy").and.callThrough()',
       '};'
@@ -70,6 +75,16 @@ eslintTester.run('named-spy', rule, {
       ]),
       errors: [
         { message: 'Variable should be named after the spy name' }
+      ]
+    },
+    {
+      code: linesToCode([
+        'someObject = {',
+        '  "some:func": jasmine.createSpy("someFunc")',
+        '};'
+      ]),
+      errors: [
+        {message: 'Variable should be named after the spy name'}
       ]
     },
     {
