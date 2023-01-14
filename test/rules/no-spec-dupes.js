@@ -122,6 +122,21 @@ eslintTester.run('no-spec-dupes', rule, {
         '  });',
         '});'
       ], 'same branch until spec')
+    },
+    {
+      options: [
+        'branch'
+      ],
+      code: toCode([
+        'var specName = "evaluated";',
+        'describe("Parent context", function(){',
+        '  it("same spec", function(){});',
+        '  describe("Inner context", function(){',
+        '    it(specName, function(){});',
+        '    it("same spec", function(){});',
+        '  });',
+        '});'
+      ])
     }
   ],
   invalid: [
@@ -222,6 +237,29 @@ eslintTester.run('no-spec-dupes', rule, {
       errors: [
         {
           message: 'Duplicate spec: "parent context same spec"',
+          type: 'CallExpression'
+        }
+      ]
+    },
+    {
+      options: [
+        'branch'
+      ],
+      code: toCode([
+        'var specName = "evaluated";',
+        'describe("Parent context", function(){',
+        '  describe("Inner context", function(){',
+        '    it("same spec", function(){});',
+        '  });',
+        '  describe("Inner context", function(){',
+        '    it(specName, function(){});',
+        '    it("same spec", function(){});',
+        '  });',
+        '});'
+      ], 'same spec in identically named contexts with evaluated spec'),
+      errors: [
+        {
+          message: 'Duplicate spec: "Parent context Inner context same spec"',
           type: 'CallExpression'
         }
       ]
