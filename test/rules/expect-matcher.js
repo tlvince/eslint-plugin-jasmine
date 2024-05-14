@@ -3,14 +3,15 @@
 var rule = require('../../lib/rules/expect-matcher')
 var RuleTester = require('eslint').RuleTester
 
-var eslintTester = new RuleTester()
+var eslintTester = new RuleTester({ parserOptions: { ecmaVersion: 2015 } })
 
 eslintTester.run('expect-matcher', rule, {
   valid: [
     'expect("something").toEqual("else");',
     'expect(true).toBeDefined();',
     'expect([1, 2, 3]).toEqual([1, 2, 3]);',
-    'expect(undefined).not.toBeDefined();'
+    'expect(undefined).not.toBeDefined();',
+    'it("something", () => expect(null).toBeFalsy());'
   ],
 
   invalid: [
@@ -32,6 +33,14 @@ eslintTester.run('expect-matcher', rule, {
     },
     {
       code: 'expect(true).toBeDefined;',
+      errors: [
+        {
+          message: 'Expect must have a corresponding matcher call.'
+        }
+      ]
+    },
+    {
+      code: 'it("something", () => expect(null));',
       errors: [
         {
           message: 'Expect must have a corresponding matcher call.'
