@@ -1,11 +1,11 @@
 # eslint-plugin-jasmine
 
-[![Build Status][travis-image]][travis-url]
+[![Build Status][build-image]][build-url]
 [![npm version][npm-image]][npm-url]
 [![License][license-image]][license-url]
 
-[travis-url]: https://travis-ci.org/tlvince/eslint-plugin-jasmine
-[travis-image]: https://img.shields.io/travis/tlvince/eslint-plugin-jasmine.svg
+[build-url]: https://github.com/tlvince/eslint-plugin-jasmine/actions
+[build-image]: https://img.shields.io/github/actions/workflow/status/tlvince/eslint-plugin-jasmine/releases.yml
 [npm-url]: https://www.npmjs.com/package/eslint-plugin-jasmine
 [npm-image]: https://img.shields.io/npm/v/eslint-plugin-jasmine.svg
 [license-url]: https://opensource.org/licenses/MIT
@@ -17,16 +17,16 @@
 
 1. Install `eslint-plugin-jasmine` as a dev-dependency:
 
-    ```shell
-    npm install --save-dev eslint-plugin-jasmine
-    ```
+   ```shell
+   npm install --save-dev eslint-plugin-jasmine
+   ```
 
 2. Enable the plugin by adding it to your `.eslintrc`:
 
-    ```yaml
-    plugins:
-      - jasmine
-    ```
+   ```yaml
+   plugins:
+     - jasmine
+   ```
 
 ESLint itself provides a [Jasmine environment][env] for Jasmine's global
 variables. It's therefore recommended to also enable it in your `.eslintrc`:
@@ -54,7 +54,7 @@ plugins:
   - jasmine
 env:
   jasmine: true
-extends: 'plugin:jasmine/recommended'
+extends: "plugin:jasmine/recommended"
 ```
 
 See the [ESLint config docs][] for more information about extending
@@ -64,32 +64,31 @@ configuration files.
 
 ### Rules
 
-Rule                              | Recommended                        | Options
-----                              | -----------                        | -------
-[expect-matcher][]                | 1,                                 |
-[expect-single-argument][]        | 1,                                 |
-[missing-expect][]                | 0, `'expect()'`, `'expectAsync()'` | expectation function names
-[named-spy][]                     | 0                                  |
-[new-line-before-expect][]        | 1                                  |
-[new-line-between-declarations][] | 1                                  |
-[no-assign-spyon][]               | 0                                  |
-[no-describe-variables][]         | 0                                  |
-[no-disabled-tests][]             | 1                                  |
-[no-expect-in-setup-teardown][]   | 1, `'expect()'`, `'expectAsync()'` | expectation function names
-[no-focused-tests][]              | 2                                  |
-[no-global-setup][]               | 2                                  |
-[no-pending-tests][]              | 1                                  |
-[no-promise-without-done-fail][]  | 1                                  |
-[no-spec-dupes][]                 | 1, `'block'`                       | `['block', 'branch']`
-[no-suite-callback-args][]        | 2                                  |
-[no-suite-dupes][]                | 1, `'block'`                       | `['block', 'branch']`
-[no-unsafe-spy][]                 | 1                                  |
-[valid-expect][]                  | `deprecated`                       |
-[prefer-jasmine-matcher][]        | 1                                  |
-[prefer-promise-strategies][]     | 1                                  |
-[prefer-toHaveBeenCalledWith][]   | 1                                  |
-[prefer-toBeUndefined][]          | 0                                  | `['always', 'never']`
-
+| Rule                              | Recommended                        | Options                    |
+| --------------------------------- | ---------------------------------- | -------------------------- |
+| [expect-matcher][]                | 1,                                 |
+| [expect-single-argument][]        | 1,                                 |
+| [missing-expect][]                | 0, `'expect()'`, `'expectAsync()'` | expectation function names |
+| [named-spy][]                     | 0                                  |
+| [new-line-before-expect][]        | 1                                  |
+| [new-line-between-declarations][] | 1                                  |
+| [no-assign-spyon][]               | 0                                  |
+| [no-describe-variables][]         | 0                                  |
+| [no-disabled-tests][]             | 1                                  |
+| [no-expect-in-setup-teardown][]   | 1, `'expect()'`, `'expectAsync()'` | expectation function names |
+| [no-focused-tests][]              | 2                                  |
+| [no-global-setup][]               | 2                                  |
+| [no-pending-tests][]              | 1                                  |
+| [no-promise-without-done-fail][]  | 1                                  |
+| [no-spec-dupes][]                 | 1, `'block'`                       | `['block', 'branch']`      |
+| [no-suite-callback-args][]        | 2                                  |
+| [no-suite-dupes][]                | 1, `'block'`                       | `['block', 'branch']`      |
+| [no-unsafe-spy][]                 | 1                                  |
+| [valid-expect][]                  | `deprecated`                       |
+| [prefer-jasmine-matcher][]        | 1                                  |
+| [prefer-promise-strategies][]     | 1                                  |
+| [prefer-toHaveBeenCalledWith][]   | 1                                  |
+| [prefer-toBeUndefined][]          | 0                                  | `['always', 'never']`      |
 
 For example, using the recommended configuration, the `no-focused-tests` rule
 is enabled and will cause ESLint to throw an error (with an exit code of `1`)
@@ -135,7 +134,6 @@ See [configuring rules][] for more information.
 [prefer-promise-strategies]: docs/rules/prefer-promise-strategies.md
 [prefer-toHaveBeenCalledWith]: docs/rules/prefer-toHaveBeenCalledWith.md
 [prefer-toBeUndefined]: docs/rules/prefer-toBeUndefined.md
-
 [configuring rules]: http://eslint.org/docs/user-guide/configuring#configuring-rules
 
 ## Author
