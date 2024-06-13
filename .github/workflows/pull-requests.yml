@@ -7,6 +7,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: wagoid/commitlint-github-action@v6
       - uses: actions/setup-node@v4
-        with:
-          node-version-file: package.json
       - run: npm cit
