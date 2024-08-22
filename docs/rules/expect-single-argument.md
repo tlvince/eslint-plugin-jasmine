@@ -4,7 +4,7 @@ Ensure `expect` is called with a single argument.
 
 ## Rule details
 
-This rule triggers a warning if `expect` is called with more than one argument or without arguments.
+This rule triggers a warning if `expect` is called with more than one argument or without arguments when not followed by a `nothing()`.
 
 ```js
 expect();
@@ -27,4 +27,5 @@ The following patterns are not warnings:
 expect("something").toEqual("something");
 expect([1, 2, 3]).toEqual([1, 2, 3]);
 expect(true).toBeDefined();
+expect().nothing();
 ```
