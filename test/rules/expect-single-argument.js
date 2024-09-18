@@ -38,6 +38,22 @@ eslintTester.run('expect-single-argument', rule, {
           message: 'Expect must have a single argument. More than one argument were provided.'
         }
       ]
+    },
+    {
+      code: 'expect();',
+      errors: [
+        {
+          message: 'Expect must have a single argument. No arguments were provided.'
+        }
+      ]
+    },
+    {
+      code: 'expect("something", "else");',
+      errors: [
+        {
+          message: 'Expect must have a single argument. More than one argument were provided.'
+        }
+      ]
     }
   ]
 })
