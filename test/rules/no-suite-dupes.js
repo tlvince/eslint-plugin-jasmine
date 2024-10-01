@@ -96,6 +96,25 @@ eslintTester.run('no-suite-dupes', rule, {
         '  });',
         '});'
       ])
+    },
+    {
+      options: [
+        'branch'
+      ],
+      code: linesToCode([
+        'var suiteName = "evaluated";',
+        'describe("context", function(){',
+        '  describe("same", function(){',
+        '    // it(...',
+        '  });',
+        '  describe(suiteName, function(){',
+        '    // it(...',
+        '  });',
+        '});',
+        'describe("same", function(){',
+        '  // it(...',
+        '});'
+      ], 'same suite in different levels')
     }
   ],
   invalid: [
@@ -216,6 +235,31 @@ eslintTester.run('no-suite-dupes', rule, {
       errors: [
         {
           message: 'Duplicate suite: "parent context same"',
+          type: 'CallExpression'
+        }
+      ]
+    },
+    {
+      options: [
+        'branch'
+      ],
+      code: linesToCode([
+        'var suiteName = "evaluated";',
+        'describe("context", function(){',
+        '  describe("same", function(){',
+        '    // it(...',
+        '  });',
+        '  describe(suiteName, function(){',
+        '    // it(...',
+        '  });',
+        '  describe("same", function(){',
+        '    // it(...',
+        '  });',
+        '});'
+      ], 'same suite with evaluated suite name in between'),
+      errors: [
+        {
+          message: 'Duplicate suite: "context same"',
           type: 'CallExpression'
         }
       ]
