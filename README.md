@@ -15,6 +15,39 @@
 
 ## Usage
 
+### With an ESLint version starting from v9
+
+1. Install `eslint-plugin-jasmine` as a dev-dependency:
+
+   ```shell
+   npm install --save-dev eslint-plugin-jasmine
+   ```
+
+2. Enable the plugin, add its globals and the recommended rules to your ESLint configuration in `eslint.config.js`:
+
+   ```js
+   import js from '@eslint/js';
+   import jasmine from 'eslint-plugin-jasmine';
+   import globals from 'globals';
+
+   export default [
+       js.configs.recommended,
+       jasmine.configs.recommended,
+       {
+           languageOptions: {
+               globals: {
+                   ...globals.jasmine
+               }
+           },
+           plugins: {
+               jasmine
+           }
+       }
+   ];
+   ```
+
+### With an ESLint version lower than v9
+
 1. Install `eslint-plugin-jasmine` as a dev-dependency:
 
    ```shell
@@ -28,7 +61,7 @@
      - jasmine
    ```
 
-ESLint itself provides a [Jasmine environment][env] for Jasmine's global
+ESLint itself provides a [Jasmine environment](https://eslint.org/docs/v8.x/use/configure/language-options) for Jasmine's global
 variables. It's therefore recommended to also enable it in your `.eslintrc`:
 
 ```yaml
@@ -40,15 +73,23 @@ env:
 
 By default, no rules are enabled. See the next section for more.
 
-[env]: http://eslint.org/docs/user-guide/configuring#specifying-environments
-
 ## Configuration
 
 This plugin exports a `recommended` configuration that enforces good practices.
 
-To enable this configuration, use the `extends` property in your `.eslintrc`
-config file:
+**Using recommended configuration in ESLint version starting from v9:**
 
+Add `jasmine.configs.recommended` to the default export array in `eslint.config.js`:
+```js
+export default [
+  jasmine.configs.recommended,
+  /* rest of your config */
+];
+```
+
+**Using recommended configuration in ESLint version lower than v9:**
+
+Use the `extends` property in your `.eslintrc` config file:
 ```yaml
 plugins:
   - jasmine
@@ -93,6 +134,25 @@ configuration files.
 For example, using the recommended configuration, the `no-focused-tests` rule
 is enabled and will cause ESLint to throw an error (with an exit code of `1`)
 when triggered.
+
+
+
+**Customizing rules in ESLint version starting from v9:**
+
+You may customise each rule by ading them under a `rules` property in `eslint.config.js`:
+
+```js
+export default [
+  {
+    rules: {
+      'jasmine/no-focused-tests': 0
+    }
+  },
+  /* rest of your config */
+];
+```
+
+**Customizing rules in ESLint version lower than v9:**
 
 You may customise each rule by adding a value in your `.eslintrc` `rules`
 property:
